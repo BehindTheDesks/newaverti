@@ -11,7 +11,7 @@ interface StrategyCardProps {
 
 function StrategyCard({ title, description, href, icon }: StrategyCardProps) {
   return (
-    <div className="group relative bg-[#FAF8F5]/40 hover:bg-white rounded-2xl p-8 border border-transparent hover:border-gray-100 hover:shadow-xl transition-all duration-500 flex flex-col justify-between h-full transform hover:-translate-y-1">
+    <div className="group relative bg-[#FAF8F5]/40 hover:bg-white rounded-2xl p-8 border border-[#1A1A1A]/5 hover:border-[#1A1A1A]/20 hover:shadow transition-all duration-500 flex flex-col justify-between h-full transform hover:-translate-y-1">
       <div className="space-y-6">
         {/* Icon Container */}
         <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#582C83]/5 text-[#582C83] group-hover:bg-[#582C83] group-hover:text-white transition-all duration-500">
@@ -58,10 +58,10 @@ export default function RefinedStrategies() {
         {/* Section Header */}
         <div className="flex items-start gap-5 border-l-2 border-[#582C83] pl-6 max-w-2xl">
           <div className="space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight font-serif text-[#1A1A1A]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight font-serif text-[#1A1A1A]">
               Refined Strategies
             </h2>
-            <p className="text-sm sm:text-base text-[#4A4A4A] leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-[#4A4A4A] leading-relaxed">
               Our specialities are designed to address complexity with surgical clarity.
             </p>
           </div>

@@ -11,7 +11,7 @@ export default function SuccessMetrics() {
             <span className="text-[10px] font-bold uppercase tracking-widest text-[#FAF8F5]/60 block">
               Metrics of Success
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight font-serif text-white max-w-xl">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-normal leading-tight font-serif text-white max-w-xl">
               Delivering tangible growth in an intangible world.
             </h2>
           </div>
@@ -20,7 +20,7 @@ export default function SuccessMetrics() {
           <div className="lg:col-span-5 grid grid-cols-2 gap-8 md:gap-12">
             {/* Stat 1 */}
             <div className="space-y-1">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-light font-serif tracking-tight text-white block">
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-light font-serif tracking-tight text-white block">
                 $4.2B
               </span>
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#FAF8F5]/60 block">
@@ -30,7 +30,7 @@ export default function SuccessMetrics() {
 
             {/* Stat 2 */}
             <div className="space-y-1">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-light font-serif tracking-tight text-white block">
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-light font-serif tracking-tight text-white block">
                 30%
               </span>
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#FAF8F5]/60 block">

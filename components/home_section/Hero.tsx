@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative w-full overflow-hidden py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Content Side */}
-        <div className="lg:col-span-6 flex flex-col justify-center space-y-8 animate-[fadeIn_1s_ease-out]">
+        <div className="lg:col-span-6 flex flex-col justify-center space-y-12 animate-[fadeIn_1s_ease-out]">
           <div className="space-y-4">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#582C83]">
               The Future of Enterprise

@@ -56,7 +56,7 @@ export default function Team() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <TeamMember
             name="Bukki Orekoya"
-            role="Managing Director"
+            role="Management & Financial Consultant"
             imageSrc="/images/bukki_orekoya.jpeg"
           />
           <TeamMember
@@ -65,7 +65,7 @@ export default function Team() {
             imageSrc="/images/cecilia_osoka.jpeg"
           />
           <TeamMember
-            name="Inyang Sami Orungbe"
+            name="Inyang Sami-Orungbe"
             role="Tech Architecture"
             imageSrc="/images/inyang_sami_orungbe.jpeg"
           />

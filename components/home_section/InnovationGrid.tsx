@@ -27,7 +27,7 @@ function PrincipleItem({ number, title, description }: PrincipleItemProps) {
 export default function InnovationGrid() {
   return (
     <section id="expertise" className="w-full py-20 lg:py-28 bg-[#FAF8F5]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
           {/* Left Column Accent Card */}
