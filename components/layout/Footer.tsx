@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#FAF8F5] border-t border-[#582C83]/5 pt-16 pb-12">
+    <footer className="w-full border-t bg-[#582C83]  border-[#582C83]/5 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
         
         {/* Main Grid */}
@@ -14,11 +14,11 @@ export default function Footer() {
           <div className="md:col-span-6 space-y-4">
             <Link 
               href="/" 
-              className="text-2xl font-bold tracking-tight text-[#1A1A1A] font-serif hover:text-[#582C83] transition-colors duration-300"
+              className="text-2xl font-bold tracking-tight text-[#FAF8F5] font-serif hover:text-[#582C83] transition-colors duration-300"
             >
               Averti
             </Link>
-            <p className="text-xs leading-relaxed text-[#4A4A4A] max-w-sm">
+            <p className="text-xs leading-relaxed text-[#FAF8F5] max-w-sm">
               Pioneering tomorrow&apos;s business standards through rigorous
               precision and innovative strategy.
             </p>
@@ -29,14 +29,14 @@ export default function Footer() {
             
             {/* Consulting */}
             <div className="space-y-4">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#582C83]">
+              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#FAF8F5]">
                 Consulting
               </h5>
               <ul className="space-y-2">
                 <li>
                   <Link 
                     href="#privacy" 
-                    className="text-xs text-[#4A4A4A] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
                   >
                     Privacy Policy
                   </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="#terms" 
-                    className="text-xs text-[#4A4A4A] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
                   >
                     Terms of Service
                   </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div className="space-y-4">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#582C83]">
+              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#FAF8F5]">
                 Connect
               </h5>
               <ul className="space-y-2">
@@ -63,7 +63,7 @@ export default function Footer() {
                     href="https://linkedin.com" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-[#4A4A4A] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
                   >
                     LinkedIn
                   </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="#insights" 
-                    className="text-xs text-[#4A4A4A] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
                   >
                     Insights
                   </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-[#4A4A4A]">
+        <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-[#FAF8F5]">
           <p>© 2026 Averti Consulting. All rights reserved.</p>
         </div>
 

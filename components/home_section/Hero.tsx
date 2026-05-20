@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/20">
             {/* Dark Conference Room Rendering */}
             <Image
-              src="/images/hero-conference.png"
+              src="/images/averti_team.jpeg"
               alt="Luxury Dark Executive Conference Room"
               fill
               priority

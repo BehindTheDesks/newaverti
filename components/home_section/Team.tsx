@@ -20,7 +20,7 @@ function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Soft elegant gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" /> */}
       </div>
 
       {/* Name and Designation */}
@@ -53,26 +53,21 @@ export default function Team() {
         </div>
 
         {/* Team Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <TeamMember
-            name="Marcus Sterling"
+            name="Bukki Orekoya"
             role="Managing Director"
-            imageSrc="/images/member-marcus.png"
+            imageSrc="/images/bukki_orekoya.jpeg"
           />
           <TeamMember
-            name="Elena Vance"
+            name="Cecilia Osoka"
             role="Head of Strategy"
-            imageSrc="/images/member-elena.png"
+            imageSrc="/images/cecilia_osoka.jpeg"
           />
           <TeamMember
-            name="Julian Rossi"
+            name="Inyang Sami Orungbe"
             role="Tech Architecture"
-            imageSrc="/images/member-julian.png"
-          />
-          <TeamMember
-            name="Sarah Chen"
-            role="Operations Lead"
-            imageSrc="/images/member-sarah.png"
+            imageSrc="/images/inyang_sami_orungbe.jpeg"
           />
         </div>
 
