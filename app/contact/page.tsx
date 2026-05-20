@@ -1,322 +1,482 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { Mail, Phone, MapPin, Send, ShieldAlert, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import {
+  CheckCircle2,
+  Clock3,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  ShieldCheck,
+} from "lucide-react";
+import { motion, useReducedMotion, type Transition } from "motion/react";
+
+type FormData = {
+  name: string;
+  email: string;
+  company: string;
+  interest: string;
+  message: string;
+};
+
+const initialFormData: FormData = {
+  name: "",
+  email: "",
+  company: "",
+  interest: "",
+  message: "",
+};
+
+const contactDetails = [
+  {
+    icon: MapPin,
+    eyebrow: "Global Headquarters",
+    title: "15 Kingsway Road, Ikoyi",
+    detail: "Lagos, Nigeria",
+  },
+  {
+    icon: Mail,
+    eyebrow: "Advisory Routing",
+    title: "briefings@averti.com",
+    detail: "Secure partner review",
+  },
+  {
+    icon: Phone,
+    eyebrow: "Institutional Relations",
+    title: "+234 (1) 460-9110",
+    detail: "Monday - Friday, 09:00 - 18:00 WAT",
+  },
+];
+
+const interestOptions = [
+  "Strategic Advisory Session",
+  "Operational Integration",
+  "Risk & Integrity Systems",
+  "Technological Architecture",
+  "2026 Whitepaper Request",
+  "Other Board Inquiry",
+];
+
+const reveal = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
+
+function getPrefillFromUrl() {
+  if (typeof window === "undefined") {
+    return initialFormData;
+  }
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const adviser = searchParams.get("adviser");
+  const service = searchParams.get("service");
+  const reading = searchParams.get("reading");
+  const whitepaper = searchParams.get("interest");
+
+  if (adviser) {
+    return {
+      ...initialFormData,
+      interest: "Strategic Advisory Session",
+      message: `I would like to request a strategic briefing with ${adviser}.`,
+    };
+  }
+
+  if (service) {
+    return {
+      ...initialFormData,
+      interest: service,
+      message: `I am interested in learning more about your ${service} solutions.`,
+    };
+  }
+
+  if (reading) {
+    return {
+      ...initialFormData,
+      interest: "Research & Insights Discussion",
+      message: `I read your article "${reading}" and would like to discuss its implications for my firm.`,
+    };
+  }
+
+  if (whitepaper) {
+    return {
+      ...initialFormData,
+      interest: "2026 Whitepaper Request",
+      message:
+        'Please send the full publication for "Bridging Legacy Autonomy with Intelligence".',
+    };
+  }
+
+  return initialFormData;
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="block text-[11px] font-semibold uppercase tracking-[0.28em] text-[#93457A]">
+      {children}
+    </span>
+  );
+}
+
+function Field({
+  id,
+  label,
+  children,
+}: {
+  id: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-2.5">
+      <label
+        htmlFor={id}
+        className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1A1A1A]"
+      >
+        {label}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+const fieldClass =
+  "w-full border border-[#1A1A1A]/15 bg-[#FAF8F5]/60 px-4 py-3.5 text-sm text-[#1A1A1A] outline-none transition-all duration-300 placeholder:text-[#4A4A4A]/45 focus:border-[#93457A] focus:bg-white focus:ring-4 focus:ring-[#93457A]/10";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    interest: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const reduceMotion = useReducedMotion();
 
-  // Auto-fill from URL params (e.g. adviser, service, reading selection)
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const searchParams = new URLSearchParams(window.location.search);
-      const adviser = searchParams.get("adviser");
-      const service = searchParams.get("service");
-      const reading = searchParams.get("reading");
-      const whitepaper = searchParams.get("interest");
-
-      let prefilledMsg = "";
-      let prefilledInterest = "";
-
-      if (adviser) {
-        prefilledInterest = "Strategic Advisory Session";
-        prefilledMsg = `I would like to request a strategic briefing with ${adviser}.`;
-      } else if (service) {
-        prefilledInterest = service;
-        prefilledMsg = `I am interested in learning more about your ${service} solutions.`;
-      } else if (reading) {
-        prefilledInterest = "Research & Insights Discussion";
-        prefilledMsg = `I read your article "${reading}" and would like to discuss its implications for my firm.`;
-      } else if (whitepaper) {
-        prefilledInterest = "2026 Whitepaper Request";
-        prefilledMsg = `Please send the full publication for "Bridging Legacy Autonomy with Intelligence".`;
-      }
-
-      setFormData((prev) => ({
-        ...prev,
-        interest: prefilledInterest || prev.interest,
-        message: prefilledMsg || prev.message,
+    const timer = window.setTimeout(() => {
+      setFormData((current) => ({
+        ...current,
+        ...getPrefillFromUrl(),
       }));
-    }
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const updateField =
+    (field: keyof FormData) =>
+    (
+      event:
+        | React.ChangeEvent<HTMLInputElement>
+        | React.ChangeEvent<HTMLTextAreaElement>
+        | React.ChangeEvent<HTMLSelectElement>
+    ) => {
+      setFormData((current) => ({
+        ...current,
+        [field]: event.target.value,
+      }));
+    };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate luxury API response time
-    setTimeout(() => {
+    window.setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
     }, 1200);
   };
 
+  const transition: Transition = {
+    duration: reduceMotion ? 0 : 0.7,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
+
   return (
-    <div className="w-full bg-[#FAF8F5] py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-6 space-y-20">
-        
-        {/* Intro Hero Section */}
-        <section className="space-y-6 max-w-3xl">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#93457A]">
-            Initiate Contact
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight font-serif text-[#1A1A1A]">
-            Request a strategic{" "}
-            <span className="italic font-light text-[#93457A]">
-              boardroom briefing
-            </span>
-          </h1>
-          <p className="text-base sm:text-lg text-[#4A4A4A] leading-relaxed font-light">
-            We value privacy and focus. All consultation requests are processed through secure protocols and routed directly to our senior advisory partners.
-          </p>
-        </section>
+    <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
+      <motion.section
+        variants={reveal}
+        initial="hidden"
+        animate="show"
+        transition={transition}
+        className="border-b border-[#1A1A1A]/10"
+      >
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16 lg:py-28">
+          <div className="lg:col-span-6">
+            <SectionLabel>Initiate Contact</SectionLabel>
+            <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">
+              Strategic dialogue{" "}
+              <span className="italic text-[#93457A]">begins here</span>
+            </h1>
+          </div>
+          <div className="flex items-end lg:col-span-5 lg:col-start-8">
+            <p className="max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
+              Connect with Averti&apos;s senior advisors to explore strategic
+              solutions for complex operational, financial, and technology
+              challenges.
+            </p>
+          </div>
+        </div>
+      </motion.section>
 
-        {/* Contact Layout Grid */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          
-          {/* Informational Column (Left Side) */}
-          <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
-            <div className="space-y-8">
-              <h2 className="text-2xl font-serif text-[#1A1A1A]">
-                Direct Contacts & HQ
-              </h2>
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16">
+        <motion.aside
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: reduceMotion ? 0 : 0.1,
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.18 }}
+          className="lg:col-span-5"
+        >
+          <motion.div variants={reveal} transition={transition}>
+            <SectionLabel>Global Presence</SectionLabel>
+            <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
+              A private channel for executive inquiry.
+            </h2>
+            <p className="mt-6 max-w-md text-sm font-light leading-7 text-[#4A4A4A]">
+              Consultation requests are reviewed with discretion and routed to
+              senior advisory partners according to mandate complexity.
+            </p>
+          </motion.div>
 
-              <div className="space-y-6">
-                {/* Headquarters card */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-[#93457A]/5 text-[#93457A] flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
+          <div className="mt-12 divide-y divide-[#1A1A1A]/10 border-y border-[#1A1A1A]/10">
+            {contactDetails.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.article
+                  key={item.eyebrow}
+                  variants={reveal}
+                  transition={transition}
+                  className="grid grid-cols-[44px_1fr] gap-5 py-7"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#93457A]/20 text-[#93457A]">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <div className="space-y-1">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">
-                      Main Board Office
+                  <div>
+                    <h3 className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#93457A]">
+                      {item.eyebrow}
                     </h3>
-                    <p className="text-sm text-[#4A4A4A] font-light leading-relaxed">
-                      15 Kingsway Road, Ikoyi,<br /> Lagos, Nigeria.
+                    <p className="mt-3 font-serif text-xl leading-snug">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-sm font-light leading-6 text-[#4A4A4A]">
+                      {item.detail}
                     </p>
                   </div>
-                </div>
+                </motion.article>
+              );
+            })}
+          </div>
 
-                {/* Email card */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-[#93457A]/5 text-[#93457A] flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">
-                      Advisory Routing
-                    </h3>
-                    <p className="text-sm text-[#4A4A4A] font-light">
-                      briefings@averti.com
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone card */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-[#93457A]/5 text-[#93457A] flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">
-                      Institutional Relations
-                    </h3>
-                    <p className="text-sm text-[#4A4A4A] font-light">
-                      +234 (1) 460-9110
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Privacy notice bar */}
-            <div className="p-6 bg-white border border-[#93457A]/10 rounded-xl space-y-2 flex items-start space-x-3">
-              <ShieldAlert className="w-5 h-5 text-[#93457A] shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">
+          <motion.div
+            variants={reveal}
+            transition={transition}
+            className="mt-10 border border-[#93457A]/15 bg-white/60 p-6"
+          >
+            <div className="flex items-start gap-4">
+              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#93457A]" />
+              <div>
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em]">
                   Confidentiality Assured
-                </h4>
-                <p className="text-[11px] text-[#4A4A4A] leading-relaxed font-light">
-                  Averti maintains absolute zero-sharing policies regarding inquiry data and briefing content. Non-Disclosure Agreements (NDAs) are provided proactively prior to detailed operations scoping sessions.
+                </h3>
+                <p className="mt-3 text-sm font-light leading-7 text-[#4A4A4A]">
+                  Inquiry data and briefing content are handled with strict
+                  discretion. NDAs are available before detailed operational
+                  scoping.
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
+        </motion.aside>
 
-          {/* Form Column (Right Side) */}
-          <div className="lg:col-span-7">
-            <div className="bg-white p-8 sm:p-10 rounded-2xl border border-gray-100 shadow-sm">
-              {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <h2 className="text-xl sm:text-2xl font-serif text-[#1A1A1A] border-b border-gray-100 pb-4">
-                    Inquiry Details
+        <motion.div
+          variants={reveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.16 }}
+          transition={transition}
+          className="lg:col-span-7"
+        >
+          <div className="border border-[#1A1A1A]/10 bg-white p-7 shadow-sm sm:p-10 lg:p-12">
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="border-b border-[#1A1A1A]/10 pb-7">
+                  <SectionLabel>Professional Inquiry</SectionLabel>
+                  <h2 className="mt-4 font-serif text-3xl font-normal leading-tight">
+                    Tell us where strategic clarity is needed.
                   </h2>
+                </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <div className="space-y-2">
-                      <label 
-                        htmlFor="name" 
-                        className="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A]"
-                      >
-                        Your Name
-                      </label>
-                      <input 
-                        id="name"
-                        type="text" 
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        placeholder="e.g. Adewale Johnson"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm text-[#1A1A1A] placeholder-gray-400 focus:outline-none focus:border-[#93457A] transition-all bg-gray-50/50"
-                      />
-                    </div>
-
-                    {/* Email */}
-                    <div className="space-y-2">
-                      <label 
-                        htmlFor="email" 
-                        className="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A]"
-                      >
-                        Business Email
-                      </label>
-                      <input 
-                        id="email"
-                        type="email" 
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        placeholder="e.g. a.johnson@firm.com"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm text-[#1A1A1A] placeholder-gray-400 focus:outline-none focus:border-[#93457A] transition-all bg-gray-50/50"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Company */}
-                    <div className="space-y-2">
-                      <label 
-                        htmlFor="company" 
-                        className="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A]"
-                      >
-                        Company / Institution
-                      </label>
-                      <input 
-                        id="company"
-                        type="text" 
-                        required
-                        value={formData.company}
-                        onChange={(e) => setFormData({...formData, company: e.target.value})}
-                        placeholder="e.g. Enterprise Group Ltd"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm text-[#1A1A1A] placeholder-gray-400 focus:outline-none focus:border-[#93457A] transition-all bg-gray-50/50"
-                      />
-                    </div>
-
-                    {/* Interest / Practice Area */}
-                    <div className="space-y-2">
-                      <label 
-                        htmlFor="interest" 
-                        className="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A]"
-                      >
-                        Practice Interest
-                      </label>
-                      <select
-                        id="interest"
-                        required
-                        value={formData.interest}
-                        onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#93457A] transition-all bg-gray-50/50 appearance-none"
-                      >
-                        <option value="">Select Focus Area</option>
-                        <option value="Strategic Advisory Session">Strategic Advisory Session</option>
-                        <option value="Operational Integration">Operational Integration</option>
-                        <option value="Risk & Integrity Systems">Risk & Integrity Systems</option>
-                        <option value="Technological Architecture">Technological Architecture</option>
-                        <option value="2026 Whitepaper Request">2026 Whitepaper Request</option>
-                        <option value="Other Board Inquiry">Other Board Inquiry</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <label 
-                      htmlFor="message" 
-                      className="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A]"
-                    >
-                      Briefing Scoping / Request
-                    </label>
-                    <textarea 
-                      id="message"
-                      rows={5}
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <Field id="name" label="Full Name">
+                    <input
+                      id="name"
+                      type="text"
                       required
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      placeholder="Outline your primary strategic challenge or request details..."
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm text-[#1A1A1A] placeholder-gray-400 focus:outline-none focus:border-[#93457A] transition-all bg-gray-50/50 resize-none"
+                      value={formData.name}
+                      onChange={updateField("name")}
+                      placeholder="Adewale Johnson"
+                      className={fieldClass}
                     />
-                  </div>
+                  </Field>
 
-                  {/* Submit Button */}
+                  <Field id="email" label="Professional Email">
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={updateField("email")}
+                      placeholder="a.johnson@firm.com"
+                      className={fieldClass}
+                    />
+                  </Field>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <Field id="company" label="Organization">
+                    <input
+                      id="company"
+                      type="text"
+                      required
+                      value={formData.company}
+                      onChange={updateField("company")}
+                      placeholder="Enterprise Group Ltd."
+                      className={fieldClass}
+                    />
+                  </Field>
+
+                  <Field id="interest" label="Inquiry Type">
+                    <select
+                      id="interest"
+                      required
+                      value={formData.interest}
+                      onChange={updateField("interest")}
+                      className={`${fieldClass} appearance-none`}
+                    >
+                      <option value="">Select focus area</option>
+                      {interestOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
+
+                <Field id="message" label="Message">
+                  <textarea
+                    id="message"
+                    rows={6}
+                    required
+                    value={formData.message}
+                    onChange={updateField("message")}
+                    placeholder="Briefly outline your strategic objectives..."
+                    className={`${fieldClass} resize-none leading-7`}
+                  />
+                </Field>
+
+                <div className="flex flex-col gap-5 border-t border-[#1A1A1A]/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-semibold tracking-wide text-white bg-[#93457A] hover:bg-[#7B3566] disabled:bg-gray-400 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+                    className="inline-flex items-center justify-center rounded-full bg-[#93457A] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-[#7B3566] disabled:cursor-not-allowed disabled:bg-[#4A4A4A]/45"
                   >
                     {isSubmitting ? (
-                      <span>Validating Security Scopes...</span>
+                      <span>Validating Request...</span>
                     ) : (
                       <>
-                        <span>Submit Private Scoping Request</span>
-                        <Send className="w-4 h-4 ml-2" />
+                        <span>Initiate Inquiry</span>
+                        <Send className="ml-2 h-4 w-4" aria-hidden="true" />
                       </>
                     )}
                   </button>
-                </form>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-12 text-center space-y-6 animate-[fadeIn_0.5s_ease-out]">
-                  <div className="w-16 h-16 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
-                    <CheckCircle2 className="w-10 h-10" />
-                  </div>
-                  <div className="space-y-2">
-                    <h2 className="text-2xl font-serif text-[#1A1A1A] font-medium">
-                      Inquiry Scoped & Dispatched
-                    </h2>
-                    <p className="text-sm text-[#4A4A4A] leading-relaxed max-w-sm font-light">
-                      Thank you, <span className="font-semibold text-brand-purple">{formData.name}</span>. Your request has been securely routed. A senior advisory partner will establish contact within 24 hours.
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        company: "",
-                        interest: "",
-                        message: "",
-                      });
-                    }}
-                    className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-[#93457A] border border-[#93457A] hover:bg-[#93457A] hover:text-white transition-all duration-300"
-                  >
-                    Submit another inquiry
-                  </button>
+                  <p className="flex items-center gap-2 text-xs font-light leading-6 text-[#4A4A4A]">
+                    <Clock3 className="h-4 w-4 text-[#93457A]" aria-hidden="true" />
+                    Senior advisory response within 24 hours.
+                  </p>
                 </div>
-              )}
-            </div>
+              </form>
+            ) : (
+              <motion.div
+                variants={reveal}
+                initial="hidden"
+                animate="show"
+                transition={transition}
+                className="flex min-h-[460px] flex-col items-center justify-center text-center"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#93457A]/10 text-[#93457A]">
+                  <CheckCircle2 className="h-9 w-9" aria-hidden="true" />
+                </div>
+                <h2 className="mt-8 font-serif text-3xl font-normal">
+                  Inquiry Scoped & Dispatched
+                </h2>
+                <p className="mt-4 max-w-md text-sm font-light leading-7 text-[#4A4A4A]">
+                  Thank you,{" "}
+                  <span className="font-semibold text-[#93457A]">
+                    {formData.name}
+                  </span>
+                  . Your request has been securely routed. A senior advisory
+                  partner will establish contact within 24 hours.
+                </p>
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setFormData(initialFormData);
+                  }}
+                  className="mt-8 inline-flex items-center justify-center rounded-full border border-[#93457A] px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-all duration-300 hover:bg-[#93457A] hover:text-white"
+                >
+                  Submit another inquiry
+                </button>
+              </motion.div>
+            )}
           </div>
-        </section>
+        </motion.div>
+      </section>
 
-      </div>
+      <motion.section
+        variants={reveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.18 }}
+        transition={transition}
+        className="border-y border-[#1A1A1A]/10"
+      >
+        <div className="relative min-h-[360px] overflow-hidden bg-[#1A1A1A] sm:min-h-[460px]">
+          <Image
+            src="/images/hero-conference.png"
+            alt="Quiet executive room prepared for confidential advisory discussion"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-black/35" />
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={reveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.18 }}
+        transition={transition}
+        className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24"
+      >
+        <ShieldCheck className="mx-auto h-7 w-7 text-[#93457A]" aria-hidden="true" />
+        <h2 className="mt-8 font-serif text-3xl font-normal leading-tight sm:text-4xl">
+          Precision in strategy. Integrity in partnership.
+        </h2>
+        <p className="mx-auto mt-6 max-w-3xl text-sm font-light leading-7 text-[#4A4A4A] sm:text-base sm:leading-8">
+          Every consultation is treated as a confidential engagement, ensuring
+          your organization&apos;s intellectual property and long-term vision
+          remain protected while we engineer competitive advantage.
+        </p>
+      </motion.section>
     </div>
   );
 }
