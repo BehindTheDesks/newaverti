@@ -17,6 +17,7 @@ function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
           src={imageSrc}
           alt={`Professional studio headshot of ${name}`}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Soft elegant gradient overlay */}
@@ -28,7 +29,7 @@ function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
         <h4 className="text-lg font-medium tracking-tight text-[#1A1A1A] font-serif">
           {name}
         </h4>
-        <p className="text-[10px] font-bold tracking-wider uppercase text-[#582C83]">
+        <p className="text-[10px] font-bold tracking-wider uppercase text-[#93457A]">
           {role}
         </p>
       </div>

@@ -22,7 +22,7 @@ export default function CTA() {
         <div className="pt-2">
           <Link
             href="#contact-form"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-[#582C83] hover:bg-[#481D73] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-[#93457A] hover:bg-[#7B3566] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
           >
             Initiate Dialogue
           </Link>

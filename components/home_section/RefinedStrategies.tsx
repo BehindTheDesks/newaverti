@@ -14,7 +14,7 @@ function StrategyCard({ title, description, href, icon }: StrategyCardProps) {
     <div className="group relative bg-[#FAF8F5]/40 hover:bg-white rounded-2xl p-8 border border-[#1A1A1A]/5 hover:border-[#1A1A1A]/20 hover:shadow transition-all duration-500 flex flex-col justify-between h-full transform hover:-translate-y-1">
       <div className="space-y-6">
         {/* Icon Container */}
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#582C83]/5 text-[#582C83] group-hover:bg-[#582C83] group-hover:text-white transition-all duration-500">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#93457A]/5 text-[#93457A] group-hover:bg-[#93457A] group-hover:text-white transition-all duration-500">
           {icon}
         </div>
 
@@ -33,7 +33,7 @@ function StrategyCard({ title, description, href, icon }: StrategyCardProps) {
       <div className="pt-6">
         <Link
           href={href}
-          className="inline-flex items-center text-xs font-semibold tracking-wider uppercase text-[#582C83] hover:text-[#481D73] transition-all duration-300 group/link"
+          className="inline-flex items-center text-xs font-semibold tracking-wider uppercase text-[#93457A] hover:text-[#7B3566] transition-all duration-300 group/link"
         >
           Learn More
           <svg
@@ -56,7 +56,7 @@ export default function RefinedStrategies() {
     <section id="services" className="w-full py-20 lg:py-28 bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         {/* Section Header */}
-        <div className="flex items-start gap-5 border-l-2 border-[#582C83] pl-6 max-w-2xl">
+        <div className="flex items-start gap-5 border-l-2 border-[#93457A] pl-6 max-w-2xl">
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight font-serif text-[#1A1A1A]">
               Refined Strategies

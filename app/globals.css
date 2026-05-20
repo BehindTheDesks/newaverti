@@ -4,10 +4,12 @@
   --font-sans: var(--font-inter), sans-serif;
   --font-serif: var(--font-cormorant), serif;
   
-  --color-brand-purple: #582C83;
-  --color-brand-purple-hover: #481D73;
-  --color-brand-purple-dark: #3C1053;
-  --color-brand-purple-light: #F3E8FF;
+  --color-brand-purple: #93457A;
+  --color-brand-purple-hover: #7B3566;
+  --color-brand-purple-dark: #5F284E;
+  --color-brand-purple-light: #F8EDF4;
+  --color-brand-orange: #E67E22;
+  --color-brand-orange-hover: #CF6F1D;
   --color-brand-cream: #FAF8F5;
   --color-brand-slate: #1A1A1A;
   --color-brand-grey: #4A4A4A;
@@ -18,4 +20,3 @@ body {
   background-color: var(--color-brand-cream);
   color: var(--color-brand-slate);
 }
-

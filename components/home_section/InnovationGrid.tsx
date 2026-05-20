@@ -10,7 +10,7 @@ function PrincipleItem({ number, title, description }: PrincipleItemProps) {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
-        <span className="text-xs font-bold uppercase tracking-wider text-[#582C83]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#93457A]">
           {number}
         </span>
         <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">

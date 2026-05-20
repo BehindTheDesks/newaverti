@@ -2,7 +2,7 @@
 
 export default function SuccessMetrics() {
   return (
-    <section id="impact" className="w-full py-16 lg:py-20 bg-[#4C2A75] text-white">
+    <section id="impact" className="w-full py-16 lg:py-20 bg-[#93457A] text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           

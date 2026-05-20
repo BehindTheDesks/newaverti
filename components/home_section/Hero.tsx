@@ -10,12 +10,12 @@ export default function Hero() {
         {/* Left Content Side */}
         <div className="lg:col-span-6 flex flex-col justify-center space-y-12 animate-[fadeIn_1s_ease-out]">
           <div className="space-y-4">
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#582C83]">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#93457A]">
               The Future of Enterprise
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight font-serif text-[#1A1A1A]">
               Future-Proofing Your Business Through{" "}
-              <span className="italic font-light text-[#582C83] relative inline-block">
+              <span className="italic font-light text-[#93457A] relative inline-block">
                 Strategic Precision
               </span>
             </h1>
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="#expertise"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white bg-[#582C83] hover:bg-[#481D73] shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white bg-[#93457A] hover:bg-[#7B3566] shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Our expertise
             </Link>
@@ -52,6 +52,7 @@ export default function Hero() {
               alt="Luxury Dark Executive Conference Room"
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
             {/* Accent overlay gradient */}
@@ -60,7 +61,7 @@ export default function Hero() {
 
           {/* Floating Metric Card Overlay */}
           <div className="absolute -bottom-6 left-6 sm:left-12 bg-white/95 backdrop-blur-md px-8 py-6 rounded-xl shadow-xl border border-gray-100 flex flex-col justify-center animate-[slideUp_0.8s_ease-out_delay-300ms]">
-            <span className="text-3xl sm:text-4xl font-bold font-serif text-[#582C83] leading-none mb-1">
+            <span className="text-3xl sm:text-4xl font-bold font-serif text-[#93457A] leading-none mb-1">
               94%
             </span>
             <span className="text-[10px] font-bold tracking-widest text-[#4A4A4A] uppercase leading-none">

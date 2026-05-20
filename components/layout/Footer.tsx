@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-[#582C83]  border-[#582C83]/5 pt-16 pb-12">
+    <footer className="w-full border-t bg-[#93457A]  border-[#93457A]/5 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
         
         {/* Main Grid */}
@@ -14,9 +15,16 @@ export default function Footer() {
           <div className="md:col-span-6 space-y-4">
             <Link 
               href="/" 
-              className="text-2xl font-bold tracking-tight text-[#FAF8F5] font-serif hover:text-[#582C83] transition-colors duration-300"
+              className="inline-block transition-opacity hover:opacity-90 duration-300"
             >
-              Averti
+              <Image
+                src="/images/averti_logo.png"
+                alt="Averti Consulting Logo"
+                width={120}
+                height={36}
+                style={{ height: "auto" }}
+                className="h-9 w-auto object-contain"
+              />
             </Link>
             <p className="text-xs leading-relaxed text-[#FAF8F5] max-w-sm">
               Pioneering tomorrow&apos;s business standards through rigorous
@@ -36,7 +44,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="#privacy" 
-                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Privacy Policy
                   </Link>
@@ -44,7 +52,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="#terms" 
-                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Terms of Service
                   </Link>
@@ -63,7 +71,7 @@ export default function Footer() {
                     href="https://linkedin.com" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#93457A] transition-colors duration-200"
                   >
                     LinkedIn
                   </Link>
@@ -71,7 +79,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="#insights" 
-                    className="text-xs text-[#FAF8F5] hover:text-[#582C83] transition-colors duration-200"
+                    className="text-xs text-[#FAF8F5] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Insights
                   </Link>
