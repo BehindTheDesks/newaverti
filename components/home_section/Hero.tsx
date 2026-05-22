@@ -2,73 +2,94 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        {/* Left Content Side */}
-        <div className="lg:col-span-6 flex flex-col justify-center space-y-12 animate-[fadeIn_1s_ease-out]">
+
+        {/* LEFT */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="lg:col-span-6 flex flex-col justify-center space-y-10"
+        >
           <div className="space-y-4">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#93457A]">
               The Future of Enterprise
             </span>
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight font-serif text-[#1A1A1A]">
-              Future-Proofing Your Business Through{" "}
-              <span className="italic font-light text-[#93457A] relative inline-block">
-                Strategic Precision
+              Strategic Advisory for{" "}
+              <span className="italic font-light text-[#93457A]">
+                Business Growth
               </span>
             </h1>
           </div>
 
-          <p className="text-base sm:text-lg leading-relaxed text-[#4A4A4A] max-w-xl font-normal">
-            Averti provides high-stakes consulting that bridges traditional
-            authority with modern efficiency. We design resilient architectures
-            for tomorrow&apos;s market leaders.
+          <p className="text-base sm:text-lg leading-relaxed text-[#4A4A4A] max-w-xl">
+            Averti Professional Managers partners with organizations to deliver practical solutions across finance, operations, governance, and human capital development.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
-              href="#expertise"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white bg-[#93457A] hover:bg-[#7B3566] shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+              href="/services"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#93457A] hover:bg-[#7B3566] transition-all duration-300"
             >
-              Our expertise
+              Explore Services
             </Link>
+
             <Link
-              href="#impact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-[#1A1A1A] bg-white hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow transition-all duration-300 transform hover:-translate-y-0.5"
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-[#1A1A1A] bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow"
             >
-              Client impact
+              Schedule Consultation
             </Link>
           </div>
-        </div>
 
-        {/* Right Graphic/Media Side */}
-        <div className="lg:col-span-6 relative animate-[fadeIn_1.2s_ease-out]">
-          <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-            {/* Dark Conference Room Rendering */}
+          {/* TRUST LINE */}
+          <p className="text-xs tracking-wide text-[#4A4A4A] pt-2">
+            Trusted across finance, governance and enterprise transformation in West Africa.
+          </p>
+        </motion.div>
+
+        {/* RIGHT */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:col-span-6 relative"
+        >
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-white/20 group">
             <Image
               src="/images/averti_team.jpeg"
-              alt="Luxury Dark Executive Conference Room"
+              alt="Averti Professional Managers"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover hover:scale-105 transition-transform duration-700"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
-            {/* Accent overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
 
-          {/* Floating Metric Card Overlay */}
-          <div className="absolute -bottom-6 left-6 sm:left-12 bg-white/95 backdrop-blur-md px-8 py-6 rounded-xl shadow-xl border border-gray-100 flex flex-col justify-center animate-[slideUp_0.8s_ease-out_delay-300ms]">
-            <span className="text-3xl sm:text-4xl font-bold font-serif text-[#93457A] leading-none mb-1">
+          {/* REFINED METRIC CARD */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="absolute -bottom-6 left-6 bg-white/95 backdrop-blur-md px-7 py-5 rounded-xl shadow-lg border border-gray-100"
+          >
+            <span className="text-3xl font-bold font-serif text-[#93457A]">
               94%
             </span>
-            <span className="text-[10px] font-bold tracking-widest text-[#4A4A4A] uppercase leading-none">
-              Client Retention Rate
-            </span>
-          </div>
-        </div>
+            <p className="text-[10px] font-semibold tracking-widest text-[#4A4A4A] uppercase">
+              Client Retention
+            </p>
+          </motion.div>
+        </motion.div>
+
       </div>
     </section>
   );

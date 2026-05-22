@@ -2,61 +2,98 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Compass, Eye, Shield } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Compass,
+  Eye,
+  Shield,
+  BriefcaseBusiness,
+  Users,
+  LineChart,
+  Scale,
+} from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 
 const values = [
   {
     icon: Shield,
-    title: "Uncompromising Integrity",
-    desc: "Confidentiality, candor, and analytical discipline anchor every engagement, giving leadership counsel they can act on with confidence.",
+    title: "Integrity & Confidentiality",
+    desc: "We uphold the highest level of professionalism, discretion, and ethical responsibility across every engagement and client interaction.",
   },
   {
     icon: Award,
-    title: "Strategic Precision",
-    desc: "Recommendations are shaped by evidence, operating context, and the pressures that define each enterprise mandate.",
+    title: "Practical Expertise",
+    desc: "Our recommendations are built from decades of hands-on industry experience across finance, governance, operations, and business management.",
   },
   {
     icon: Compass,
-    title: "Forward Navigation",
-    desc: "We design structures that anticipate technological shifts, regulatory movement, and the next horizon of enterprise risk.",
+    title: "Strategic Innovation",
+    desc: "We help organizations adapt to changing regulations, market realities, and emerging business challenges with forward-thinking solutions.",
   },
   {
     icon: Eye,
-    title: "Clear Vision",
-    desc: "Complexity is translated into concise decision architecture for executives, boards, and transformation leaders.",
+    title: "Sustainable Impact",
+    desc: "We focus on long-term operational efficiency, business continuity, and measurable transformation that strengthens organizational performance.",
   },
 ];
 
 const disciplines = [
-  "Enterprise architecture",
-  "Corporate finance",
-  "Operational integration",
-  "Risk and integrity systems",
+  "Audit & Quality Assurance",
+  "Accountancy Services",
+  "Tax Advisory Services",
+  "Financial Services",
+  "Training & Development",
+  "Consultancy & Advisory",
+  "Process Management",
+  "Human Capital Management",
 ];
 
 const advantages = [
   {
     number: "01",
-    title: "Senior-led expertise",
-    desc: "Engagements are directed by experienced operators and strategists, not routed through generic delivery layers.",
+    title: "120+ Years Combined Experience",
+    desc: "Our team is composed of seasoned professionals with extensive experience across multiple sectors of the Nigerian economy.",
   },
   {
     number: "02",
-    title: "Bespoke operating architecture",
-    desc: "We reject template playbooks in favor of systems shaped around each client's market position, governance, and growth pressure.",
+    title: "Tailored Business Solutions",
+    desc: "We take time to understand each client’s operations, culture, and strategic direction before developing practical recommendations.",
   },
   {
     number: "03",
-    title: "Durable executive partnership",
-    desc: "Every mandate is evaluated against resilience, clarity, and the ability to perform under pressure long after launch.",
+    title: "Execution-Focused Advisory",
+    desc: "Beyond strategy development, we support implementation, process improvement, and sustainable organizational transformation.",
+  },
+];
+
+const services = [
+  {
+    icon: Scale,
+    title: "Audit & Assurance",
+    desc: "Statutory audit, forensic audit, due diligence, internal control reviews, and risk management support.",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Business Advisory",
+    desc: "Strategic planning, business development, restructuring, venture support, and operational consulting.",
+  },
+  {
+    icon: LineChart,
+    title: "Financial Services",
+    desc: "Business valuation, mergers & acquisitions, capital structuring, and financial performance optimization.",
+  },
+  {
+    icon: Users,
+    title: "Human Capital",
+    desc: "Recruitment, training, talent management, performance systems, and workforce development strategies.",
   },
 ];
 
 const proofPoints = [
-  { value: "04", label: "Integrated advisory disciplines" },
-  { value: "20+", label: "Years of senior operating perspective" },
-  { value: "01", label: "Unified partner-led delivery model" },
+  { value: "120+", label: "Years Combined Experience" },
+  { value: "08", label: "Core Advisory Areas" },
+  { value: "100%", label: "Client-Focused Approach" },
 ];
 
 const reveal = {
@@ -103,6 +140,7 @@ export default function AboutContent() {
 
   return (
     <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
+      {/* HERO */}
       <motion.section
         variants={reveal}
         initial="hidden"
@@ -115,22 +153,27 @@ export default function AboutContent() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16 lg:py-28">
           <div className="flex flex-col justify-center lg:col-span-5">
-            <SectionLabel>Our Identity</SectionLabel>
+            <SectionLabel>About Averti</SectionLabel>
+
             <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight text-[#1A1A1A] sm:text-5xl lg:text-6xl">
-              About Averti
+              Strategic advisory built on experience, execution, and trust.
             </h1>
-            <p className="mt-7 max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
-              Averti Professional Managers is anchored in intellectual rigor and
-              strategic partnership. We guide complex organizations through
-              tectonic shifts in global markets with precision, discretion, and
-              foresight.
+
+            <p className="mt-7 max-w-xl text-base leading-8 text-[#4A4A4A] sm:text-lg">
+              Averti Professional Managers is a multidisciplinary consulting and
+              advisory firm focused on business advancement, financing, process
+              optimization, and human capital development. We help organizations
+              navigate complexity with practical, sustainable solutions tailored
+              to their operational realities.
             </p>
+
             <div className="mt-12 grid grid-cols-1 gap-px border-y border-[#1A1A1A]/10 bg-[#1A1A1A]/10 sm:grid-cols-3 lg:max-w-xl">
               {proofPoints.map((point) => (
                 <div key={point.label} className="bg-[#FAF8F5] py-5 sm:px-5">
                   <span className="font-serif text-3xl font-normal text-[#93457A]">
                     {point.value}
                   </span>
+
                   <p className="mt-2 text-[10px] font-semibold uppercase leading-5 tracking-[0.2em] text-[#4A4A4A]">
                     {point.label}
                   </p>
@@ -143,58 +186,72 @@ export default function AboutContent() {
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
               animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative ml-auto aspect-[4/3] w-full overflow-hidden rounded-lg border border-white/60 bg-[#1A1A1A] shadow-2xl lg:max-w-[680px]"
+              transition={{
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative ml-auto aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/60 bg-[#1A1A1A] shadow-lg lg:max-w-[680px]"
             >
               <Image
-                src="/images/hero-conference.png"
-                alt="Executive conference setting for strategic advisory work"
+                src="/images/averti_team.jpeg"
+                alt="Averti Professional Managers team"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 680px"
-                className="object-cover opacity-95 transition-transform duration-700 hover:scale-[1.025]"
+                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
             </motion.div>
-            <div className="absolute -bottom-8 left-4 w-[min(82%,360px)] border border-[#1A1A1A]/10 bg-[#FAF8F5]/95 p-6 shadow-xl backdrop-blur sm:left-10">
+
+            <div className="absolute -bottom-8 left-4 w-[min(82%,360px)] border border-[#1A1A1A]/10 bg-[#FAF8F5]/95 p-6 shadow backdrop-blur sm:left-10">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[#93457A]">
-                Est. London
+                Our Commitment
               </span>
+
               <p className="mt-3 font-serif text-2xl leading-snug text-[#1A1A1A]">
-                Strategic governance for moments that define enterprise value.
+                We advance, we execute, and we finish.
               </p>
             </div>
           </div>
         </div>
       </motion.section>
 
+      {/* POSITION */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid grid-cols-1 gap-14 border-b border-[#1A1A1A]/10 pb-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <SectionLabel>Our Position</SectionLabel>
+            <SectionLabel>Who We Are</SectionLabel>
+
             <h2 className="mt-5 max-w-xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              A multidisciplinary advisory house for consequential decisions.
+              Helping businesses adapt, improve, and grow in a changing world.
             </h2>
           </div>
+
           <div className="space-y-7 lg:col-span-5">
-            <p className="text-sm font-light leading-7 text-[#4A4A4A] sm:text-base">
-              Our DNA is built upon the intersection of management consultancy,
-              legal advisory, and operational auditing. We do not simply provide
-              advice; we architect solutions that are resilient to market
-              volatility and regulatory shifts.
+            <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
+              The modern business environment continues to evolve through
+              changing regulations, global competition, economic uncertainty,
+              and operational complexity. Organizations today require more than
+              theoretical advice — they need experienced partners capable of
+              delivering practical and measurable outcomes.
             </p>
-            <p className="text-sm font-light leading-7 text-[#4A4A4A] sm:text-base">
-              By integrating specialist vertical knowledge with a horizontal
-              perspective, Averti empowers leaders to move from reactive survival
-              to proactive market leadership.
+
+            <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
+              At Averti, we work closely with our clients to understand their
+              business operations, corporate culture, and strategic priorities.
+              This allows us to develop solutions that improve efficiency,
+              strengthen governance, and drive sustainable performance.
             </p>
           </div>
+
           <div className="border-l border-[#93457A]/30 pl-6 lg:col-span-2 lg:self-end">
             <span className="font-serif text-5xl font-normal text-[#93457A]">
               120+
             </span>
+
             <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]">
-              Years combined experience
+              Years Combined Experience
             </p>
           </div>
         </div>
@@ -211,32 +268,76 @@ export default function AboutContent() {
         </div>
       </Reveal>
 
+      {/* SERVICES */}
+      <Reveal className="bg-white/60 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <SectionLabel>Core Services</SectionLabel>
+
+            <h2 className="mt-5 font-serif text-3xl font-normal leading-tight sm:text-4xl">
+              Broad-based professional services across critical business areas.
+            </h2>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {services.map((service) => {
+              const Icon = service.icon;
+
+              return (
+                <div
+                  key={service.title}
+                  className="rounded-2xl border border-[#1A1A1A]/10 bg-[#FAF8F5] p-8"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#93457A]/10 text-[#93457A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h3 className="mt-6 font-serif text-2xl text-[#1A1A1A]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-[#4A4A4A]">
+                    {service.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Reveal>
+
+      {/* ETHOS */}
       <Reveal className="bg-[#93457A] py-20 text-white sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
               The Averti Ethos
             </span>
+
             <blockquote className="mt-6 max-w-4xl font-serif text-3xl font-normal italic leading-tight sm:text-4xl lg:text-5xl">
-              &ldquo;Navigating complexity through clarity and purpose is not a
-              choice, but the ultimate strategic imperative.&rdquo;
+              “We offer not only transformation strategies, but the capability
+              needed to execute them and deliver sustainable change.”
             </blockquote>
           </div>
-          <p className="max-w-md text-sm font-light leading-7 text-[#FAF8F5]/75 lg:col-span-4">
-            Our work creates calm inside high-pressure decisions, giving
-            executive teams the structure to act with conviction.
+
+          <p className="max-w-md text-sm leading-7 text-[#FAF8F5]/75 lg:col-span-4">
+            Our mission is to create value for organizations through strategic
+            insight, operational support, and long-term professional partnership.
           </p>
         </div>
       </Reveal>
 
+      {/* VALUES */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <SectionLabel>Guided by Immutable Values</SectionLabel>
+            <SectionLabel>Our Values</SectionLabel>
+
             <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Principles that keep judgment clear under pressure.
+              Principles that shape every client engagement.
             </h2>
           </div>
+
           <div className="grid grid-cols-1 gap-px overflow-hidden border border-[#1A1A1A]/10 bg-[#1A1A1A]/10 sm:grid-cols-2 lg:col-span-8">
             {values.map((value) => {
               const Icon = value.icon;
@@ -249,10 +350,12 @@ export default function AboutContent() {
                   <div className="mb-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#93457A]/20 text-[#93457A] transition-colors duration-300 group-hover:bg-[#93457A] group-hover:text-white">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
+
                   <h3 className="font-serif text-xl font-medium text-[#1A1A1A]">
                     {value.title}
                   </h3>
-                  <p className="mt-4 text-sm font-light leading-7 text-[#4A4A4A]">
+
+                  <p className="mt-4 text-sm leading-7 text-[#4A4A4A]">
                     {value.desc}
                   </p>
                 </article>
@@ -262,24 +365,28 @@ export default function AboutContent() {
         </div>
       </Reveal>
 
+      {/* ADVANTAGE */}
       <Reveal className="border-y border-[#1A1A1A]/10 bg-white/45">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <div className="relative min-h-[440px] overflow-hidden rounded-lg border border-[#1A1A1A]/10 bg-[#1A1A1A] lg:col-span-5">
+          <div className="relative min-h-[440px] overflow-hidden rounded-2xl border border-[#1A1A1A]/10 bg-[#1A1A1A] lg:col-span-5">
             <Image
               src="/images/averti_team.jpeg"
-              alt="Averti advisors gathered in a formal strategy setting"
+              alt="Averti Professional Managers"
               fill
               sizes="(max-width: 1024px) 100vw, 480px"
               className="object-cover transition-transform duration-700 hover:scale-[1.025]"
             />
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
           </div>
+
           <div className="lg:col-span-6 lg:col-start-7">
             <SectionLabel>The Averti Advantage</SectionLabel>
+
             <h2 className="mt-5 max-w-xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Designed for leaders who need judgment, discretion, and operating
-              clarity.
+              Experienced professionals delivering practical business solutions.
             </h2>
+
             <div className="mt-10 divide-y divide-[#1A1A1A]/10">
               {advantages.map((advantage) => (
                 <article
@@ -289,11 +396,13 @@ export default function AboutContent() {
                   <span className="font-serif text-xl text-[#93457A]">
                     {advantage.number}
                   </span>
+
                   <div>
                     <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1A1A1A]">
                       {advantage.title}
                     </h3>
-                    <p className="mt-3 text-sm font-light leading-7 text-[#4A4A4A]">
+
+                    <p className="mt-3 text-sm leading-7 text-[#4A4A4A]">
                       {advantage.desc}
                     </p>
                   </div>
@@ -304,20 +413,25 @@ export default function AboutContent() {
         </div>
       </Reveal>
 
+      {/* CTA */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
-        <div className="grid grid-cols-1 items-center gap-10 border border-[#1A1A1A]/10 bg-[#1A1A1A] p-8 text-white sm:p-10 lg:grid-cols-12 lg:p-12">
+        <div className="grid grid-cols-1 items-center gap-10 rounded-2xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-8 text-white sm:p-10 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-8">
             <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E67E22]">
-              Begin a Strategic Dialogue
+              Let’s Work Together
             </span>
+
             <h2 className="mt-5 max-w-2xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Bring Averti&apos;s perspective to your next enterprise decision.
+              Build stronger operations, systems, and business performance with
+              Averti.
             </h2>
-            <p className="mt-5 max-w-xl text-sm font-light leading-7 text-white/70">
-              Let us discuss how a more disciplined advisory posture can elevate
-              your organization&apos;s strategic and operational resilience.
+
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/70">
+              Speak with our team about your organization’s operational,
+              financial, governance, or workforce development goals.
             </p>
           </div>
+
           <div className="lg:col-span-4 lg:flex lg:justify-end">
             <Link
               href="/contact"

@@ -5,11 +5,13 @@ import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
-  BarChart3,
   BriefcaseBusiness,
-  Cpu,
+  Building2,
+  ClipboardCheck,
+  FileSpreadsheet,
+  GraduationCap,
   Landmark,
-  Settings,
+  Scale,
   ShieldCheck,
   UsersRound,
 } from "lucide-react";
@@ -25,92 +27,118 @@ type Service = {
 
 const services: Service[] = [
   {
-    icon: BarChart3,
-    title: "Strategic Advisory",
-    tagline: "Securing Market Dominance",
+    icon: ClipboardCheck,
+    title: "Audit & Quality Assurance",
+    tagline: "Operational Accountability",
     description:
-      "High-stakes corporate planning and portfolio optimization that positions your organization ahead of market disruption.",
+      "Independent audit and assurance solutions designed to strengthen transparency, improve reporting confidence, and support sound corporate governance.",
     bullets: [
-      "Geopolitical risk mapping",
-      "Capital allocation posture",
-      "Executive succession resilience",
-      "Enterprise portfolio health",
+      "Internal & external audit support",
+      "Compliance and control reviews",
+      "Risk identification frameworks",
+      "Operational process evaluations",
     ],
   },
   {
-    icon: Settings,
-    title: "Operational Integration",
-    tagline: "Agile Scale & Efficiency",
+    icon: Landmark,
+    title: "Financial Advisory",
+    tagline: "Strategic Financial Direction",
     description:
-      "Restructuring core systems to maximize output, streamline communication flows, and build structural operating leverage.",
+      "Practical financial management and advisory services that help organizations improve performance, manage growth, and optimize decision-making.",
     bullets: [
-      "Operating model redesign",
-      "Agile leadership orchestration",
-      "Supply chain fortification",
-      "Resource reallocation",
+      "Financial planning & analysis",
+      "Budgeting and forecasting",
+      "Business performance evaluation",
+      "Capital structure guidance",
     ],
   },
   {
-    icon: ShieldCheck,
-    title: "Risk & Integrity Systems",
-    tagline: "Defending Enterprise Value",
+    icon: FileSpreadsheet,
+    title: "Tax Advisory Services",
+    tagline: "Regulatory Confidence",
     description:
-      "Establishing regulatory posture, continuous compliance systems, and threat mitigation models for exposed enterprise environments.",
+      "Comprehensive tax planning and compliance support structured to reduce exposure, improve efficiency, and maintain regulatory alignment.",
     bullets: [
-      "Regulatory preparedness",
-      "Continuous threat assessment",
-      "Board fiduciary frameworks",
-      "Brand equity defenses",
+      "Corporate tax advisory",
+      "Tax planning strategies",
+      "Regulatory compliance support",
+      "Tax risk management",
     ],
   },
   {
-    icon: Cpu,
-    title: "Technological Architecture",
-    tagline: "Engineering the Future",
+    icon: BriefcaseBusiness,
+    title: "Corporate Consultancy",
+    tagline: "Business Transformation",
     description:
-      "Integrating AI frameworks, secure technical systems, and next-generation computing architecture into the enterprise core.",
+      "Strategic consulting engagements focused on operational growth, organizational restructuring, and long-term institutional development.",
     bullets: [
-      "AI integration strategy",
-      "Legacy modernization",
-      "Zero-trust infrastructure",
-      "Software R&D operations",
+      "Business process improvement",
+      "Corporate restructuring",
+      "Governance advisory",
+      "Strategic growth planning",
+    ],
+  },
+  {
+    icon: UsersRound,
+    title: "Human Capital Management",
+    tagline: "People & Performance",
+    description:
+      "Workforce solutions that help organizations attract, develop, and retain high-performing teams aligned with business objectives.",
+    bullets: [
+      "Talent acquisition strategy",
+      "Performance management systems",
+      "Workforce planning",
+      "Organizational culture support",
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: "Training & Development",
+    tagline: "Capacity Building",
+    description:
+      "Professional development programs designed to strengthen leadership capability, improve technical competence, and drive organizational efficiency.",
+    bullets: [
+      "Executive development programs",
+      "Corporate workshops & seminars",
+      "Technical skills training",
+      "Leadership enhancement initiatives",
     ],
   },
 ];
 
 const capabilities = [
   {
-    icon: Landmark,
-    title: "Financial Services",
-    desc: "Capital discipline, governance, and operating leverage for financial institutions.",
+    icon: ShieldCheck,
+    title: "Governance & Compliance",
+    desc: "Strengthening institutional accountability through structured oversight and risk-conscious advisory systems.",
   },
   {
-    icon: BriefcaseBusiness,
-    title: "Corporate Transformation",
-    desc: "Executive operating models for organizations navigating structural change.",
+    icon: Building2,
+    title: "Enterprise Operations",
+    desc: "Improving efficiency, coordination, and operational resilience across growing organizations.",
   },
   {
-    icon: UsersRound,
-    title: "Human Capital Systems",
-    desc: "Leadership pipelines, culture architecture, and performance readiness.",
+    icon: Scale,
+    title: "Corporate Administration",
+    desc: "Supporting organizations with structured advisory, documentation, and secretarial services.",
   },
 ];
 
 const operatingModel = [
   {
     number: "01",
-    title: "Diagnostic clarity",
-    desc: "We establish the strategic, operational, and regulatory reality before recommending movement.",
+    title: "Assessment & Discovery",
+    desc: "We begin by understanding your operational realities, financial structure, and organizational priorities.",
   },
   {
     number: "02",
-    title: "Executive architecture",
-    desc: "We translate ambition into decision systems, governance cadence, and accountable workstreams.",
+    title: "Strategic Structuring",
+    desc: "Recommendations are translated into practical systems, governance models, and measurable implementation plans.",
   },
   {
     number: "03",
-    title: "Measured transition",
-    desc: "We support implementation with calm oversight, clear indicators, and disciplined iteration.",
+    title: "Execution Support",
+    desc: "We provide ongoing guidance and oversight to ensure sustainable execution and long-term operational value.",
   },
 ];
 
@@ -158,6 +186,7 @@ export default function ServicesContent() {
 
   return (
     <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
+      {/* HERO */}
       <motion.section
         variants={reveal}
         initial="hidden"
@@ -170,30 +199,34 @@ export default function ServicesContent() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16 lg:py-28">
           <div className="flex flex-col justify-center lg:col-span-5">
-            <SectionLabel>What We Deliver</SectionLabel>
+            <SectionLabel>Professional Services</SectionLabel>
+
             <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">
-              Architectures for secure{" "}
+              Advisory solutions built for{" "}
               <span className="italic text-[#93457A]">
-                acceleration and defense
+                sustainable business performance
               </span>
             </h1>
+
             <p className="mt-7 max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
-              We design advisory systems that strengthen corporate efficiency,
-              fortify technical infrastructure, and give leadership teams a
-              disciplined path through consequential market shifts.
+              Averti Professional Managers delivers multidisciplinary consulting,
+              financial, operational, and workforce solutions tailored to the
+              realities of modern organizations and evolving business environments.
             </p>
+
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="#services"
                 className="inline-flex items-center justify-center rounded-full bg-[#93457A] px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-[#7B3566]"
               >
-                Explore Capabilities
+                Explore Services
               </Link>
+
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-[#1A1A1A]/15 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#1A1A1A] transition-all duration-300 hover:border-[#93457A]/40 hover:text-[#93457A]"
               >
-                Request Briefing
+                Request Consultation
               </Link>
             </div>
           </div>
@@ -202,37 +235,44 @@ export default function ServicesContent() {
             <div className="relative ml-auto aspect-[4/3] w-full overflow-hidden rounded-lg border border-white/60 bg-[#1A1A1A] shadow-2xl lg:max-w-[660px]">
               <Image
                 src="/images/hero-conference.png"
-                alt="Executive advisory setting for enterprise strategy work"
+                alt="Professional advisory meeting at Averti"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 660px"
                 className="object-cover opacity-95 transition-transform duration-700 hover:scale-[1.025]"
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
             </div>
+
             <div className="absolute -bottom-8 left-4 w-[min(84%,380px)] border border-[#1A1A1A]/10 bg-[#FAF8F5]/95 p-6 shadow-xl backdrop-blur sm:left-10">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[#93457A]">
-                Strategic Operating Posture
+                Integrated Advisory
               </span>
+
               <p className="mt-3 font-serif text-2xl leading-snug">
-                Services framed around decision quality, execution, and durable
-                enterprise value.
+                Structured solutions across finance, governance, operations, and
+                organizational development.
               </p>
             </div>
           </div>
         </div>
       </motion.section>
 
+      {/* SERVICES GRID */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <SectionLabel>Core Service Offerings</SectionLabel>
+            <SectionLabel>Core Service Areas</SectionLabel>
+
             <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Integrated advisory for the moments that shape the enterprise.
+              Solutions designed around operational clarity and business growth.
             </h2>
+
             <p className="mt-6 max-w-sm text-sm font-light leading-7 text-[#4A4A4A]">
-              Each service area is structured to clarify risk, improve
-              executive alignment, and create measurable operating momentum.
+              Every engagement is structured to help organizations improve
+              efficiency, strengthen governance, and build sustainable systems for
+              long-term performance.
             </p>
           </div>
 
@@ -251,7 +291,7 @@ export default function ServicesContent() {
             viewport={{ once: true, amount: 0.14 }}
             className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-8"
           >
-            {services.map((service, index) => {
+            {services.map((service) => {
               const Icon = service.icon;
 
               return (
@@ -262,9 +302,7 @@ export default function ServicesContent() {
                     duration: reduceMotion ? 0 : 0.65,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className={`group flex min-h-[360px] flex-col justify-between border border-[#1A1A1A]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#93457A]/30 hover:shadow-xl sm:p-8 ${
-                    index === 0 ? "lg:mt-10" : ""
-                  } ${index === 3 ? "lg:-mt-10" : ""}`}
+                  className="group flex min-h-[360px] flex-col justify-between border border-[#1A1A1A]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#93457A]/30 hover:shadow-xl sm:p-8"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-6 border-b border-[#1A1A1A]/10 pb-7">
@@ -272,17 +310,21 @@ export default function ServicesContent() {
                         <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#93457A]">
                           {service.tagline}
                         </span>
+
                         <h3 className="mt-3 font-serif text-2xl font-medium leading-tight">
                           {service.title}
                         </h3>
                       </div>
+
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#93457A]/20 text-[#93457A] transition-colors duration-300 group-hover:bg-[#93457A] group-hover:text-white">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                     </div>
+
                     <p className="mt-7 text-sm font-light leading-7 text-[#4A4A4A]">
                       {service.description}
                     </p>
+
                     <ul className="mt-7 grid grid-cols-1 gap-3">
                       {service.bullets.map((bullet) => (
                         <li
@@ -300,7 +342,8 @@ export default function ServicesContent() {
                     href={`/contact?service=${encodeURIComponent(service.title)}`}
                     className="mt-10 inline-flex items-center text-xs font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-colors duration-300 hover:text-[#7B3566]"
                   >
-                    Discuss this solution
+                    Discuss this service
+
                     <ArrowRight
                       className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                       aria-hidden="true"
@@ -313,13 +356,16 @@ export default function ServicesContent() {
         </div>
       </Reveal>
 
+      {/* OPERATING MODEL */}
       <Reveal className="border-y border-[#1A1A1A]/10 bg-white/45">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
-            <SectionLabel>Unlocking Strategic Value</SectionLabel>
+            <SectionLabel>Our Approach</SectionLabel>
+
             <h2 className="mt-5 max-w-md font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              A measured method for turning ambition into operating reality.
+              A collaborative framework built around measurable outcomes.
             </h2>
+
             <div className="mt-10 divide-y divide-[#1A1A1A]/10">
               {operatingModel.map((item) => (
                 <article
@@ -329,10 +375,12 @@ export default function ServicesContent() {
                   <span className="font-serif text-xl text-[#93457A]">
                     {item.number}
                   </span>
+
                   <div>
                     <h3 className="text-xs font-semibold uppercase tracking-[0.18em]">
                       {item.title}
                     </h3>
+
                     <p className="mt-3 text-sm font-light leading-7 text-[#4A4A4A]">
                       {item.desc}
                     </p>
@@ -346,26 +394,30 @@ export default function ServicesContent() {
             <div className="relative min-h-[440px] overflow-hidden rounded-lg border border-[#1A1A1A]/10 bg-[#1A1A1A]">
               <Image
                 src="/images/averti_team.jpeg"
-                alt="Averti consultants collaborating on enterprise strategy"
+                alt="Averti consulting team collaborating"
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover transition-transform duration-700 hover:scale-[1.025]"
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
             </div>
+
             <div className="absolute -bottom-8 right-4 w-[min(84%,420px)] border border-[#1A1A1A]/10 bg-[#FAF8F5]/95 p-7 shadow-xl backdrop-blur sm:right-10">
               <span className="font-serif text-5xl leading-none text-[#93457A]/35">
                 &rdquo;
               </span>
+
               <p className="mt-3 font-serif text-2xl italic leading-snug">
-                Precision is not just a value; it is the cornerstone of trust in
-                every strategic partnership we build.
+                Sustainable business growth begins with disciplined structure,
+                informed decisions, and consistent execution.
               </p>
             </div>
           </div>
         </div>
       </Reveal>
 
+      {/* CAPABILITIES */}
       <Reveal className="bg-[#1A1A1A] py-14 text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-px px-6 sm:grid-cols-3">
           {capabilities.map((capability) => {
@@ -377,9 +429,11 @@ export default function ServicesContent() {
                 className="border border-white/10 p-7 transition-colors duration-300 hover:bg-white/[0.04]"
               >
                 <Icon className="h-5 w-5 text-[#E67E22]" aria-hidden="true" />
+
                 <h3 className="mt-8 font-serif text-xl font-medium">
                   {capability.title}
                 </h3>
+
                 <p className="mt-4 text-sm font-light leading-7 text-white/65">
                   {capability.desc}
                 </p>
@@ -389,27 +443,33 @@ export default function ServicesContent() {
         </div>
       </Reveal>
 
+      {/* CTA */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid grid-cols-1 items-center gap-10 border border-[#1A1A1A]/10 bg-[#93457A] p-8 text-white sm:p-10 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-8">
             <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
-              Proven Across Ecosystems
+              Let&apos;s Build With Clarity
             </span>
+
             <h2 className="mt-5 max-w-2xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              We translate complexity into tactical market postures.
+              Partner with Averti for structured, practical, and growth-focused
+              advisory solutions.
             </h2>
+
             <p className="mt-5 max-w-xl text-sm font-light leading-7 text-[#FAF8F5]/75">
-              We stand prepared to counsel enterprise leaders on transitions,
-              integration, and security challenges with the discipline required
-              for durable outcomes.
+              From governance and finance to workforce development and operational
+              efficiency, we help organizations move forward with confidence and
+              clarity.
             </p>
           </div>
+
           <div className="lg:col-span-4 lg:flex lg:justify-end">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-all duration-300 hover:bg-transparent hover:text-white"
             >
-              Secure Strategic Audit
+              Schedule Consultation
+
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
