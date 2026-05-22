@@ -42,7 +42,7 @@ export default function Navbar() {
             className="flex items-center transition-opacity hover:opacity-90 duration-300"
           >
             <Image
-              src="/images/averti_logo.png"
+              src="/images/averti_logo_new.png"
               alt="Averti Consulting Logo"
               width={120}
               height={36}
@@ -105,7 +105,7 @@ export default function Navbar() {
 
       {/* Side Drawer (Sliding Sidebar) */}
       <aside 
-        className={`fixed top-0 right-0 z-50 h-full w-[280px] bg-[#93457A] shadow-2xl flex flex-col p-8 md:hidden transition-transform duration-300 ease-out transform ${
+        className={`fixed top-0 right-0 z-50 h-full w-[280px] bg-[#93457a] shadow-2xl flex flex-col p-8 md:hidden transition-transform duration-300 ease-out transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -117,7 +117,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             <Image
-              src="/images/averti_logo.png"
+              src="/images/averti_logo_new.png"
               alt="Averti Consulting Logo"
               width={100}
               height={30}
