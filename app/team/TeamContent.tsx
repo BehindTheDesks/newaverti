@@ -8,49 +8,55 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const leaders = [
   {
+    name: "Inyang Sami-Orungbe",
+    role: "Financial Planning & Business Development Consultant",
+    imageSrc: "/images/inyang_sami_orungbe.jpeg",
+    intro:
+      "Inyang is an experienced business development and financial planning professional with over 28 years of expertise spanning banking, pensions, investment advisory, customer relations, and strategic marketing.",
+    bio: "With a strong background in financial services and business management, Inyang has held leadership positions across banking, telecommunications, pensions, and asset management. She previously worked at IBTC Bank before taking on strategic roles at Intercellular Nigeria Plc, where she led units covering marketing research, product development, customer support, and corporate planning. As the pioneer Head of Marketing at CrusaderSterling Pensions Limited, she played a key role in growing the organization’s assets under management from inception to over ₦9 billion within 25 months. She later headed Business Development at ASSUR Asset Management Limited, where she managed investment portfolios for high net-worth individuals and institutions exceeding ₦14 billion. Her expertise covers financial planning, retirement advisory, business development, customer service, and strategic relationship management.",
+    specialties: [
+      "Financial & Retirement Planning",
+      "Business Development & Marketing",
+      "Customer Relationship Management",
+    ],
+    education:
+      "B.Sc. Business Administration, Rivers State University of Science and Technology | MBA, ESUT Business School Lagos",
+    quote:
+      "Sustainable growth is achieved through strategic relationships, disciplined planning, and consistent value creation.",
+  },
+  {
     name: "Bukki Orekoya",
     role: "Management & Financial Consultant",
     imageSrc: "/images/bukki_orekoya.jpeg",
     intro:
-      "Bukki leads structural reorganizations and capital restructuring strategies for institutions moving through complex transition.",
-    bio: "With over twenty years of fiduciary experience directing mergers, treasury controls, and operating discipline at global institutions, Bukki designs capital efficiency blueprints that safeguard corporate resilience while opening space for measured growth.",
+      "Bukki is a Chartered Accountant and seasoned management consultant with over 32 years of experience spanning auditing, financial advisory, corporate restructuring, and executive training.",
+    bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN), Bukki began her professional journey at KPMG Audit where she gained extensive experience in audit, reporting, capital restructuring, and privatisation advisory. She later became the first Nigerian Chief Accountant and Company Secretary of Paterson Candy International Nigeria Ltd, where she played a key role in the computerisation of the company’s accounting systems and oversight of major engineering and water treatment contracts. In addition to her financial expertise, she is an accredited management trainer and has facilitated professional development programmes for ICAN and other leading institutions across Nigeria.",
     specialties: [
-      "Capital Efficiency Modeling",
-      "Mergers & Acquisitions",
-      "Fiduciary Governance",
+      "Audit & Financial Advisory",
+      "Corporate Restructuring",
+      "Management Training",
     ],
-    education: "M.Sc. in Corporate Finance, London School of Economics",
-    quote: "Resilience is designed before pressure arrives.",
+    education:
+      "B.Sc. Economics, Obafemi Awolowo University | Fellow, Institute of Chartered Accountants of Nigeria (ICAN)",
+    quote:
+      "Sustainable business performance begins with discipline, structure, and informed financial leadership.",
   },
   {
     name: "Cecilia Osoka",
-    role: "Head of Strategy",
+    role: "Accounting, Banking & Operations Consultant",
     imageSrc: "/images/cecilia_osoka.jpeg",
     intro:
-      "Cecilia coordinates strategic advisory operations across market exposure, regulatory positioning, and executive decision architecture.",
-    bio: "Her work centers on market exposure profiling, antitrust advisory, and brand positioning under pressure. She has supported enterprise leaders through regulatory transition, competitive repositioning, and high-stakes operating choices.",
+      "Cecilia is a seasoned finance and banking professional with over 27 years of experience spanning accounting, audit, treasury operations, banking administration, consultancy, and professional training.",
+    bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN) and Senior Honorary Member of the Chartered Institute of Bankers of Nigeria (CIBN), Cecilia began her career in audit and accountancy before transitioning into the banking sector. She held senior operational and treasury leadership roles at Merchant Bank of Commerce, United Bank for Africa (UBA), and Ecobank Nigeria, where she oversaw large-scale banking operations, process management, systems implementation, and branch operational supervision. Her expertise also includes change management, banking process documentation, operational training, and enterprise-wide financial operations coordination. Since leaving the banking sector, she has continued to provide consulting, accounting, and training services to organizations and professionals.",
     specialties: [
-      "Geopolitical Risk Mitigation",
-      "Antitrust Posturing",
-      "C-Suite Advisory",
+      "Banking Operations & Treasury Management",
+      "Process & Change Management",
+      "Accounting & Financial Consultancy",
     ],
-    education: "MBA, Wharton School of the University of Pennsylvania",
-    quote: "Clarity is the beginning of executive momentum.",
-  },
-  {
-    name: "Inyang Sami-Orungbe",
-    role: "Head of Tech Architecture",
-    imageSrc: "/images/inyang_sami_orungbe.jpeg",
-    intro:
-      "Inyang oversees engineering integrity and technical strategy for secure, scalable enterprise transformation.",
-    bio: "An expert in next-generation cloud architectures, systemic database operations, and secure technical environments, Inyang helps clients install digital foundations that support high-volume efficiency while preserving operational trust.",
-    specialties: [
-      "Zero-Trust Infrastructure",
-      "Machine Intelligence Strategy",
-      "Enterprise R&D Scaling",
-    ],
-    education: "B.Sc. in Electrical Engineering & Computer Science, MIT",
-    quote: "Technical architecture should make leadership more decisive.",
+    education:
+      "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | Fellow, Institute of Chartered Accountants of Nigeria (ICAN)",
+    quote:
+      "Operational excellence is built through discipline, structure, and continuous improvement.",
   },
 ];
 

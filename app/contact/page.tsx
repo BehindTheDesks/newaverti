@@ -2,15 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-  CheckCircle2,
-  Clock3,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  ShieldCheck,
-} from "lucide-react";
+import { CheckCircle2, Clock3, Mail, MapPin, Phone, Send, ShieldCheck, LucideIcon} from "lucide-react";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 
 type FormData = {
@@ -21,6 +13,15 @@ type FormData = {
   message: string;
 };
 
+type ContactDetail = {
+  icon: LucideIcon;
+  eyebrow: string;
+  title: string;
+  detail: string;
+  href?: string;
+  external?: boolean;
+};
+
 const initialFormData: FormData = {
   name: "",
   email: "",
@@ -29,24 +30,27 @@ const initialFormData: FormData = {
   message: "",
 };
 
-const contactDetails = [
+const contactDetails: ContactDetail[] = [
   {
     icon: MapPin,
-    eyebrow: "Global Headquarters",
-    title: "15 Kingsway Road, Ikoyi",
+    eyebrow: "Averti Professional Managers",
+    title: "2 Adepegba Street, Ilupeju",
     detail: "Lagos, Nigeria",
+    href: "https://maps.google.com/?q=2+Adepegba+Street+Ilupeju+Lagos",
   },
   {
     icon: Mail,
-    eyebrow: "Advisory Routing",
-    title: "briefings@averti.com",
-    detail: "Secure partner review",
+    eyebrow: "Advisory Email",
+    title: "info@averti.com.ng",
+    detail: "Confidential partner communication",
+    href: "mailto:info@averti.com.ng",
   },
   {
     icon: Phone,
     eyebrow: "Institutional Relations",
-    title: "+234 (1) 460-9110",
-    detail: "Monday - Friday, 09:00 - 18:00 WAT",
+    title: "+234 1 794 3620",
+    detail: "Monday — Friday · 09:00 — 18:00 WAT",
+    href: "tel:+23417943620",
   },
 ];
 
@@ -141,8 +145,8 @@ function Field({
   );
 }
 
-const fieldClass =
-  "w-full border border-[#1A1A1A]/15 bg-[#FAF8F5]/60 px-4 py-3.5 text-sm text-[#1A1A1A] outline-none transition-all duration-300 placeholder:text-[#4A4A4A]/45 focus:border-[#93457A] focus:bg-white focus:ring-4 focus:ring-[#93457A]/10";
+const fieldClass = "w-full border border-[#1A1A1A]/12 bg-[#FAF8F5]/50 px-4 py-3.5 text-sm text-[#1A1A1A] outline-none transition-all duration-300 placeholder:text-[#4A4A4A]/40 focus:border-[#93457A]/60 focus:bg-white focus:ring-4 focus:ring-[#93457A]/8 hover:border-[#1A1A1A]/25";
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -252,19 +256,40 @@ export default function ContactPage() {
                   key={item.eyebrow}
                   variants={reveal}
                   transition={transition}
-                  className="grid grid-cols-[44px_1fr] gap-5 py-7"
+                  whileHover={{ y: reduceMotion ? 0 : -3 }}
+                  className="group grid grid-cols-[52px_1fr] gap-5 py-8 transition-all duration-300"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#93457A]/20 text-[#93457A]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#93457A]/15 bg-white text-[#93457A] transition-all duration-300 group-hover:border-[#93457A]/40 group-hover:bg-[#93457A]/5">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
+
                   <div>
                     <h3 className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#93457A]">
                       {item.eyebrow}
                     </h3>
-                    <p className="mt-3 font-serif text-xl leading-snug">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 text-sm font-light leading-6 text-[#4A4A4A]">
+
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                        className="group/link mt-3 inline-flex items-center gap-2 font-serif text-xl leading-snug text-[#1A1A1A] transition-all duration-300 hover:text-[#93457A]"
+                      >
+                        <span className="border-b border-transparent transition-all duration-300 group-hover/link:border-[#93457A]/40">
+                          {item.title}
+                        </span>
+
+                        <span className="translate-x-0 opacity-0 transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:opacity-100">
+                          →
+                        </span>
+                      </a>
+                    ) : (
+                      <p className="mt-3 font-serif text-xl leading-snug text-[#1A1A1A]">
+                        {item.title}
+                      </p>
+                    )}
+
+                    <p className="mt-2 text-sm font-light leading-6 text-[#4A4A4A]">
                       {item.detail}
                     </p>
                   </div>
@@ -272,7 +297,6 @@ export default function ContactPage() {
               );
             })}
           </div>
-
           <motion.div
             variants={reveal}
             transition={transition}
@@ -307,9 +331,15 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="border-b border-[#1A1A1A]/10 pb-7">
                   <SectionLabel>Professional Inquiry</SectionLabel>
+
                   <h2 className="mt-4 font-serif text-3xl font-normal leading-tight">
                     Tell us where strategic clarity is needed.
                   </h2>
+
+                  <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-[#4A4A4A]">
+                    Strategic consultations are reviewed confidentially by senior advisory
+                    partners and routed according to operational scope.
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">

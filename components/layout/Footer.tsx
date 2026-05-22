@@ -43,18 +43,18 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link 
-                    href="#privacy" 
+                    href="/services" 
                     className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Privacy Policy
+                    Service
                   </Link>
                 </li>
                 <li>
                   <Link 
-                    href="#terms" 
+                    href="/team" 
                     className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Terms of Service
+                    Teams
                   </Link>
                 </li>
               </ul>
