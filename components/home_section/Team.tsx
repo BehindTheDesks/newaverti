@@ -12,7 +12,7 @@ function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
   return (
     <div className="group space-y-4">
       {/* Portrait Image Container */}
-      <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-md border border-gray-100 bg-[#FAF8F5]">
+      <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md border border-gray-100 bg-[#FAF8F5]">
         <Image
           src={imageSrc}
           alt={`Professional studio headshot of ${name}`}
@@ -56,19 +56,19 @@ export default function Team() {
         {/* Team Members Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <TeamMember
+            name="Inyang Sami-Orungbe"
+            role="Financial Planning & Business Development Consultant"
+            imageSrc="/images/inyang_sami_orungbe.jpeg"
+          />
+          <TeamMember
             name="Bukki Orekoya"
             role="Management & Financial Consultant"
             imageSrc="/images/bukki_orekoya.jpeg"
           />
           <TeamMember
             name="Cecilia Osoka"
-            role="Head of Strategy"
+            role="Accounting, Banking & Operations Consultant"
             imageSrc="/images/cecilia_osoka.jpeg"
-          />
-          <TeamMember
-            name="Inyang Sami-Orungbe"
-            role="Tech Architecture"
-            imageSrc="/images/inyang_sami_orungbe.jpeg"
           />
         </div>
 

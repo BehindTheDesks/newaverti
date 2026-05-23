@@ -31,7 +31,7 @@ const services: Service[] = [
     title: "Audit & Quality Assurance",
     tagline: "Operational Accountability",
     description:
-      "Independent audit and assurance solutions designed to strengthen transparency, improve reporting confidence, and support sound corporate governance.",
+      "Independent audit and assurance solutions designed to strengthen transparency, improve reporting confidence and support sound corporate governance.",
     bullets: [
       "Internal & external audit support",
       "Compliance and control reviews",
@@ -44,7 +44,7 @@ const services: Service[] = [
     title: "Financial Advisory",
     tagline: "Strategic Financial Direction",
     description:
-      "Practical financial management and advisory services that help organizations improve performance, manage growth, and optimize decision-making.",
+      "Practical financial management and advisory services that help organizations improve performance, manage growth and optimize decision-making.",
     bullets: [
       "Financial planning & analysis",
       "Budgeting and forecasting",
@@ -57,7 +57,7 @@ const services: Service[] = [
     title: "Tax Advisory Services",
     tagline: "Regulatory Confidence",
     description:
-      "Comprehensive tax planning and compliance support structured to reduce exposure, improve efficiency, and maintain regulatory alignment.",
+      "Comprehensive tax planning and compliance support structured to reduce exposure, improve efficiency and maintain regulatory alignment.",
     bullets: [
       "Corporate tax advisory",
       "Tax planning strategies",
@@ -70,7 +70,7 @@ const services: Service[] = [
     title: "Corporate Consultancy",
     tagline: "Business Transformation",
     description:
-      "Strategic consulting engagements focused on operational growth, organizational restructuring, and long-term institutional development.",
+      "Strategic consulting engagements focused on operational growth, organizational restructuring and long-term institutional development.",
     bullets: [
       "Business process improvement",
       "Corporate restructuring",
@@ -83,7 +83,7 @@ const services: Service[] = [
     title: "Human Capital Management",
     tagline: "People & Performance",
     description:
-      "Workforce solutions that help organizations attract, develop, and retain high-performing teams aligned with business objectives.",
+      "Workforce solutions that help organizations attract, develop and retain high-performing teams aligned with business objectives.",
     bullets: [
       "Talent acquisition strategy",
       "Performance management systems",
@@ -96,7 +96,7 @@ const services: Service[] = [
     title: "Training & Development",
     tagline: "Capacity Building",
     description:
-      "Professional development programs designed to strengthen leadership capability, improve technical competence, and drive organizational efficiency.",
+      "Professional development programs designed to strengthen leadership capability, improve technical competence and drive organizational efficiency.",
     bullets: [
       "Executive development programs",
       "Corporate workshops & seminars",
@@ -115,12 +115,12 @@ const capabilities = [
   {
     icon: Building2,
     title: "Enterprise Operations",
-    desc: "Improving efficiency, coordination, and operational resilience across growing organizations.",
+    desc: "Improving efficiency, coordination and operational resilience across growing organizations.",
   },
   {
     icon: Scale,
     title: "Corporate Administration",
-    desc: "Supporting organizations with structured advisory, documentation, and secretarial services.",
+    desc: "Supporting organizations with structured advisory, documentation and secretarial services.",
   },
 ];
 
@@ -128,12 +128,12 @@ const operatingModel = [
   {
     number: "01",
     title: "Assessment & Discovery",
-    desc: "We begin by understanding your operational realities, financial structure, and organizational priorities.",
+    desc: "We begin by understanding your operational realities, financial structure and organizational priorities.",
   },
   {
     number: "02",
     title: "Strategic Structuring",
-    desc: "Recommendations are translated into practical systems, governance models, and measurable implementation plans.",
+    desc: "Recommendations are translated into practical systems, governance models and measurable implementation plans.",
   },
   {
     number: "03",
@@ -210,7 +210,7 @@ export default function ServicesContent() {
 
             <p className="mt-7 max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
               Averti Professional Managers delivers multidisciplinary consulting,
-              financial, operational, and workforce solutions tailored to the
+              financial, operational and workforce solutions tailored to the
               realities of modern organizations and evolving business environments.
             </p>
 
@@ -251,7 +251,7 @@ export default function ServicesContent() {
               </span>
 
               <p className="mt-3 font-serif text-2xl leading-snug">
-                Structured solutions across finance, governance, operations, and
+                Structured solutions across finance, governance, operations and
                 organizational development.
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function ServicesContent() {
 
             <p className="mt-6 max-w-sm text-sm font-light leading-7 text-[#4A4A4A]">
               Every engagement is structured to help organizations improve
-              efficiency, strengthen governance, and build sustainable systems for
+              efficiency, strengthen governance and build sustainable systems for
               long-term performance.
             </p>
           </div>
@@ -410,7 +410,7 @@ export default function ServicesContent() {
 
               <p className="mt-3 font-serif text-2xl italic leading-snug">
                 Sustainable business growth begins with disciplined structure,
-                informed decisions, and consistent execution.
+                informed decisions and consistent execution.
               </p>
             </div>
           </div>
@@ -452,7 +452,7 @@ export default function ServicesContent() {
             </span>
 
             <h2 className="mt-5 max-w-2xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Partner with Averti for structured, practical, and growth-focused
+              Partner with Averti for structured, practical and growth-focused
               advisory solutions.
             </h2>
 

@@ -48,7 +48,7 @@ export default function SuccessMetrics() {
             </h2>
 
             <p className="text-sm sm:text-base leading-relaxed text-white/75 max-w-md">
-              We support organizations with practical advisory solutions across finance, governance, operations, compliance, and human capital management.
+              We support organizations with practical advisory solutions across finance, governance, operations, compliance and human capital management.
             </p>
           </motion.div>
 
@@ -68,7 +68,7 @@ export default function SuccessMetrics() {
                   }}
                   className="space-y-3 border-l border-white/15 pl-5"
                 >
-                  <span className="block text-3xl sm:text-4xl lg:text-5xl font-serif font-light tracking-tight text-white">
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-serif font-light tracking-tight text-white">
                     {metric.value}
                   </span>
 

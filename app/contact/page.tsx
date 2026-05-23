@@ -214,7 +214,7 @@ export default function ContactPage() {
           <div className="flex items-end lg:col-span-5 lg:col-start-8">
             <p className="max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
               Connect with Averti&apos;s senior advisors to explore strategic
-              solutions for complex operational, financial, and technology
+              solutions for complex operational, financial and technology
               challenges.
             </p>
           </div>

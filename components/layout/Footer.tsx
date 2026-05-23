@@ -78,7 +78,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="#insights" 
+                    href="/insight" 
                     className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Insights

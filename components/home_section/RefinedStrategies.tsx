@@ -76,7 +76,7 @@ export default function RefinedStrategies() {
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-[#4A4A4A] leading-relaxed">
-            Our specialties are designed to address complexity with clarity, structure, and execution discipline.
+            Our specialties are designed to address complexity with clarity, structure and execution discipline.
           </p>
         </div>
 

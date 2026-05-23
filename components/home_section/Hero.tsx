@@ -30,7 +30,7 @@ export default function Hero() {
           </div>
 
           <p className="text-base sm:text-lg leading-relaxed text-[#4A4A4A] max-w-xl">
-            Averti Professional Managers partners with organizations to deliver practical solutions across finance, operations, governance, and human capital development.
+            Averti Professional Managers partners with organizations to deliver practical solutions across finance, operations, governance and human capital development.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">

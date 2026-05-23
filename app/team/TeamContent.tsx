@@ -12,51 +12,101 @@ const leaders = [
     role: "Financial Planning & Business Development Consultant",
     imageSrc: "/images/inyang_sami_orungbe.jpeg",
     intro:
-      "Inyang is an experienced business development and financial planning professional with over 28 years of expertise spanning banking, pensions, investment advisory, customer relations, and strategic marketing.",
-    bio: "With a strong background in financial services and business management, Inyang has held leadership positions across banking, telecommunications, pensions, and asset management. She previously worked at IBTC Bank before taking on strategic roles at Intercellular Nigeria Plc, where she led units covering marketing research, product development, customer support, and corporate planning. As the pioneer Head of Marketing at CrusaderSterling Pensions Limited, she played a key role in growing the organization’s assets under management from inception to over ₦9 billion within 25 months. She later headed Business Development at ASSUR Asset Management Limited, where she managed investment portfolios for high net-worth individuals and institutions exceeding ₦14 billion. Her expertise covers financial planning, retirement advisory, business development, customer service, and strategic relationship management.",
+      "Inyang is an experienced financial planning and business development professional with over 35 years of expertise spanning banking, pensions, investment advisory, customer relations and strategic marketing.",
+
+    bio: `Inyang Sami-Orungbe is a Business Administration graduate of Rivers State University of Science and   Technology and holds an MBA in Business Management from ESUT Business School, Lagos. She brings over 35 years of professional experience across banking, pensions, asset management, business development and corporate planning.
+
+      She began her career at IBTC Bank (now Stanbic IBTC Bank), where she worked for 10 years in various capacities before joining Intercellular Nigeria Plc. During her time there, she led several strategic units including Marketing Research, Pricing & Product Development, Customer Support and Corporate Planning.
+
+      Prior to joining the Guaranty Trust Group, Inyang served as the pioneer Head of Marketing at CrusaderSterling Pensions Limited, where she played a key role in building the organization’s market presence during its formative years. Within the GT Group, she later headed the Business Development Department of ASSUR Asset Management Limited, a subsidiary of GT Assurance Plc (now AXA Mansard).
+
+      Her core competencies include Personal Financial Planning, Retirement Planning, Business Development, Sales & Marketing, Customer Service and professional soft skills development.
+
+      Inyang is a Member of the Chartered Institute of Directors (MCIoD), a Fellow of the National Institute of Marketing of Nigeria (FNIMN) and a member of the Chartered Institute of Personnel Management (CIPM).
+
+      She also serves as an Independent Member and Chairman of the Investment Committee for the Mutual Funds of RMB Nigeria Asset Management Limited, a subsidiary of Rand Merchant Bank Limited.
+
+      Inyang is additionally certified as a Retirement Life Coach by Retirement Life Plan.`,
+
     specialties: [
       "Financial & Retirement Planning",
       "Business Development & Marketing",
       "Customer Relationship Management",
     ],
+
     education:
-      "B.Sc. Business Administration, Rivers State University of Science and Technology | MBA, ESUT Business School Lagos",
+      "B.Sc. Business Administration, Rivers State University of Science and Technology | MBA, ESUT Business School Lagos | MCIoD | FNIMN | CIPM",
+
     quote:
-      "Sustainable growth is achieved through strategic relationships, disciplined planning, and consistent value creation.",
+      "Sustainable growth is achieved through disciplined planning, strong relationships and long-term value creation.",
   },
   {
     name: "Bukki Orekoya",
     role: "Management & Financial Consultant",
     imageSrc: "/images/bukki_orekoya.jpeg",
+
     intro:
-      "Bukki is a Chartered Accountant and seasoned management consultant with over 32 years of experience spanning auditing, financial advisory, corporate restructuring, and executive training.",
-    bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN), Bukki began her professional journey at KPMG Audit where she gained extensive experience in audit, reporting, capital restructuring, and privatisation advisory. She later became the first Nigerian Chief Accountant and Company Secretary of Paterson Candy International Nigeria Ltd, where she played a key role in the computerisation of the company’s accounting systems and oversight of major engineering and water treatment contracts. In addition to her financial expertise, she is an accredited management trainer and has facilitated professional development programmes for ICAN and other leading institutions across Nigeria.",
+      "Bukki is a seasoned Chartered Accountant and management consultant with over four decades of experience spanning audit, taxation, financial management, corporate advisory, internal controls and management consulting.",
+
+    bio: `Bukki Orekoya is a highly experienced Chartered Accountant, Management Consultant and Financial Advisory Professional with over four decades of expertise across audit, taxation, financial management, corporate restructuring, internal controls and strategic business advisory.
+
+    She is a Fellow of the Institute of Chartered Accountants of Nigeria (FCA), a member of the Nigerian Institute of Management (MNIM) and an Associate of the Chartered Institute of Taxation of Nigeria (ACIT). She is also an accredited management trainer certified by the Centre for Management Development and a SEC-recognized Reporting Accountant/Auditor in the Nigerian Capital Market.
+
+    Prior to co-leading Averti Professional Managers, Bukki served as the Principal Partner at Bukki Orekoya & Co/Manifold Consult, where she provided consulting and financial advisory services to organizations across multiple sectors.
+
+    Earlier in her professional career, she worked with KPMG Audit, where she participated in audit engagements, public issue reporting, capital restructuring advisory, project appraisal and technical consulting assignments.
+
+    She also served as the first Nigerian Chief Accountant and Company Secretary at Paterson Candy International Nigeria Limited, a subsidiary of Thames Water, United Kingdom, where she contributed significantly to the company’s financial management and corporate governance operations.`,
+
     specialties: [
       "Audit & Financial Advisory",
-      "Corporate Restructuring",
-      "Management Training",
+      "Taxation & Financial Management",
+      "Corporate Advisory & Internal Controls",
     ],
+
     education:
-      "B.Sc. Economics, Obafemi Awolowo University | Fellow, Institute of Chartered Accountants of Nigeria (ICAN)",
+      "Fellow, Institute of Chartered Accountants of Nigeria (FCA) | Member, Nigerian Institute of Management (MNIM) | Associate, Chartered Institute of Taxation of Nigeria (ACIT)",
+
     quote:
-      "Sustainable business performance begins with discipline, structure, and informed financial leadership.",
+      "Strong organizations are built on sound financial management, accountability and disciplined leadership.",
   },
   {
     name: "Cecilia Osoka",
     role: "Accounting, Banking & Operations Consultant",
     imageSrc: "/images/cecilia_osoka.jpeg",
+
     intro:
-      "Cecilia is a seasoned finance and banking professional with over 27 years of experience spanning accounting, audit, treasury operations, banking administration, consultancy, and professional training.",
-    bio: "A Fellow of the Institute of Chartered Accountants of Nigeria (ICAN) and Senior Honorary Member of the Chartered Institute of Bankers of Nigeria (CIBN), Cecilia began her career in audit and accountancy before transitioning into the banking sector. She held senior operational and treasury leadership roles at Merchant Bank of Commerce, United Bank for Africa (UBA), and Ecobank Nigeria, where she oversaw large-scale banking operations, process management, systems implementation, and branch operational supervision. Her expertise also includes change management, banking process documentation, operational training, and enterprise-wide financial operations coordination. Since leaving the banking sector, she has continued to provide consulting, accounting, and training services to organizations and professionals.",
+      "Cecilia is an accomplished accounting, finance and banking professional with over 25 years of experience spanning audit, treasury operations, banking administration, process management, consultancy and professional training.",
+
+    bio: `Cecilia Osoka is a highly experienced accounting, finance and banking professional with a career spanning over 25 years across audit, financial management, banking operations, treasury management, process improvement, consultancy and professional training.
+
+    She holds a B.Sc. (Hons) in Accounting from the University of Lagos and an MBA from Obafemi Awolowo University. She is a Fellow of the Institute of Chartered Accountants of Nigeria (FCA), a Senior Honorary Member of the Chartered Institute of Bankers of Nigeria (HCIBN) and an Associate of the Chartered Institute of Taxation of Nigeria (ACITN).
+
+    Cecilia began her professional career in audit and accountancy practice at Uniugbe, Akintola & Co before transitioning into the finance sector as the pioneer Manager, Accounts and Finance at Risk Fund Plc, a venture capital finance company.
+
+    Her banking career, which spanned almost 17 years, began at Merchant Bank of Commerce Limited as a pioneer Treasury staff member. She later joined United Bank for Africa (UBA) Plc, where she spent 10 years across several strategic operations and treasury functions including Clearing, Treasury Operations, Remittances, Central Processing Centre (CPC) and Settlement Operations. She played a key role in establishing the bank’s Central Processing Centre and later served as Head of LCY and Liquidity Management Units within the Treasury Department, participating actively in ALCO meetings.
+
+    Cecilia also worked within UBA’s Business Process Design Department, contributing to banking application implementations including SAP and Flexcube, change management initiatives, process documentation and operational procedure manual development. She exited UBA as a Principal Manager and Head of Settlement Operations.
+
+    At Ecobank Nigeria Plc, where she worked for nearly three years as an Assistant General Manager, Cecilia supervised large-scale banking operations including Clearing, Funds Transfer, Card Operations, Trade Operations, Treasury Operations, Cheque Management and Central Account Opening processes. She also oversaw branch operations coordination for over 250 branches and participated in group-wide operational projects, systems implementation, procedural documentation and operational training initiatives.
+
+    Throughout her banking career, Cecilia attended several professional development programmes including training sessions by Tom Associates, Euromoney, ING Summer School in Brussels and Holland, RTGS Training in The Gambia and other treasury and asset management programmes. She was also a member of the RTGS Implementation Group under the CBN Vision 2020 Project.
+
+    Since leaving the Ecobank Group in 2009, Cecilia has continued to provide accounting, consultancy and training services as an Independent Consultant.
+
+    As a founding Partner at Averti Professional Managers, her focus includes financial institutions training programmes, banking operations advisory and business process improvement projects.`,
+
     specialties: [
       "Banking Operations & Treasury Management",
-      "Process & Change Management",
-      "Accounting & Financial Consultancy",
+      "Business Process Improvement",
+      "Accounting, Consultancy & Professional Training",
     ],
+
     education:
-      "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | Fellow, Institute of Chartered Accountants of Nigeria (ICAN)",
+      "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | FCA | HCIBN | ACITN",
+
     quote:
-      "Operational excellence is built through discipline, structure, and continuous improvement.",
+      "Operational excellence is achieved through discipline, continuous improvement and strong financial systems.",
   },
 ];
 
@@ -125,7 +175,7 @@ export default function TeamContent() {
           </div>
           <p className="max-w-3xl text-sm font-light leading-7 text-[#4A4A4A] lg:col-span-7 lg:col-start-6">
             Averti&apos;s leadership team brings together decades of
-            multidisciplinary expertise across global finance, strategy, and
+            multidisciplinary expertise across global finance, strategy and
             operations. We are committed to engineering institutional rigor and
             delivering precision-led solutions for complex business challenges.
           </p>
@@ -162,14 +212,14 @@ export default function TeamContent() {
                   }`}
                 >
                   <div className="lg:col-span-5">
-                    <div className="group relative aspect-[4/5] overflow-hidden border border-[#1A1A1A]/10 bg-[#93457A]/5">
+                    <div className="group relative aspect-[3/4] overflow-hidden border border-[#1A1A1A]/10 bg-[#93457A]/5">
                       <Image
                         src={leader.imageSrc}
                         alt={`Studio portrait of ${leader.name}`}
                         fill
                         priority={index === 0}
                         sizes="(max-width: 1024px) 100vw, 420px"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>

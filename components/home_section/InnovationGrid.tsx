@@ -54,7 +54,7 @@ export default function InnovationGrid() {
             </h2>
 
             <p className="text-base leading-relaxed text-[#4A4A4A]">
-              Averti Professional Managers operates across audit, financial advisory, taxation, process management, and human capital development — delivering practical solutions grounded in industry experience and regulatory understanding.
+              Averti Professional Managers operates across audit, financial advisory, taxation, process management and human capital development — delivering practical solutions grounded in industry experience and regulatory understanding.
             </p>
           </motion.div>
 
@@ -71,25 +71,25 @@ export default function InnovationGrid() {
               <PrincipleItem
                 number="01"
                 title="Audit & Assurance Discipline"
-                description="We strengthen financial reliability through statutory audits, internal control reviews, forensic investigations, and risk assessments aligned with international standards."
+                description="We strengthen financial reliability through statutory audits, internal control reviews, forensic investigations and risk assessments aligned with international standards."
               />
 
               <PrincipleItem
                 number="02"
                 title="Financial & Tax Advisory"
-                description="We support organizations with valuation, restructuring, tax planning, compliance, and capital advisory across complex operating environments."
+                description="We support organizations with valuation, restructuring, tax planning, compliance and capital advisory across complex operating environments."
               />
 
               <PrincipleItem
                 number="03"
                 title="Process & Systems Optimization"
-                description="We improve operational efficiency through process mapping, business re-engineering, systems reviews, and implementation of structured controls."
+                description="We improve operational efficiency through process mapping, business re-engineering, systems reviews and implementation of structured controls."
               />
 
               <PrincipleItem
                 number="04"
                 title="Human Capital & Capacity Building"
-                description="We design and deliver training, organizational development, and workforce optimization programs that align talent with business objectives."
+                description="We design and deliver training, organizational development and workforce optimization programs that align talent with business objectives."
               />
 
             </motion.div>

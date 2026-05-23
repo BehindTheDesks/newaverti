@@ -19,22 +19,22 @@ const values = [
   {
     icon: Shield,
     title: "Integrity & Confidentiality",
-    desc: "We uphold the highest level of professionalism, discretion, and ethical responsibility across every engagement and client interaction.",
+    desc: "We uphold the highest level of professionalism, discretion and ethical responsibility across every engagement and client interaction.",
   },
   {
     icon: Award,
     title: "Practical Expertise",
-    desc: "Our recommendations are built from decades of hands-on industry experience across finance, governance, operations, and business management.",
+    desc: "Our recommendations are built from decades of hands-on industry experience across finance, governance, operations and business management.",
   },
   {
     icon: Compass,
     title: "Strategic Innovation",
-    desc: "We help organizations adapt to changing regulations, market realities, and emerging business challenges with forward-thinking solutions.",
+    desc: "We help organizations adapt to changing regulations, market realities and emerging business challenges with forward-thinking solutions.",
   },
   {
     icon: Eye,
     title: "Sustainable Impact",
-    desc: "We focus on long-term operational efficiency, business continuity, and measurable transformation that strengthens organizational performance.",
+    desc: "We focus on long-term operational efficiency, business continuity and measurable transformation that strengthens organizational performance.",
   },
 ];
 
@@ -58,12 +58,12 @@ const advantages = [
   {
     number: "02",
     title: "Tailored Business Solutions",
-    desc: "We take time to understand each client’s operations, culture, and strategic direction before developing practical recommendations.",
+    desc: "We take time to understand each client’s operations, culture and strategic direction before developing practical recommendations.",
   },
   {
     number: "03",
     title: "Execution-Focused Advisory",
-    desc: "Beyond strategy development, we support implementation, process improvement, and sustainable organizational transformation.",
+    desc: "Beyond strategy development, we support implementation, process improvement and sustainable organizational transformation.",
   },
 ];
 
@@ -71,22 +71,22 @@ const services = [
   {
     icon: Scale,
     title: "Audit & Assurance",
-    desc: "Statutory audit, forensic audit, due diligence, internal control reviews, and risk management support.",
+    desc: "Statutory audit, forensic audit, due diligence, internal control reviews and risk management support.",
   },
   {
     icon: BriefcaseBusiness,
     title: "Business Advisory",
-    desc: "Strategic planning, business development, restructuring, venture support, and operational consulting.",
+    desc: "Strategic planning, business development, restructuring, venture support and operational consulting.",
   },
   {
     icon: LineChart,
     title: "Financial Services",
-    desc: "Business valuation, mergers & acquisitions, capital structuring, and financial performance optimization.",
+    desc: "Business valuation, mergers & acquisitions, capital structuring and financial performance optimization.",
   },
   {
     icon: Users,
     title: "Human Capital",
-    desc: "Recruitment, training, talent management, performance systems, and workforce development strategies.",
+    desc: "Recruitment, training, talent management, performance systems and workforce development strategies.",
   },
 ];
 
@@ -156,13 +156,13 @@ export default function AboutContent() {
             <SectionLabel>About Averti</SectionLabel>
 
             <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight text-[#1A1A1A] sm:text-5xl lg:text-6xl">
-              Strategic advisory built on experience, execution, and trust.
+              Strategic advisory built on experience, execution and trust.
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-8 text-[#4A4A4A] sm:text-lg">
               Averti Professional Managers is a multidisciplinary consulting and
               advisory firm focused on business advancement, financing, process
-              optimization, and human capital development. We help organizations
+              optimization and human capital development. We help organizations
               navigate complexity with practical, sustainable solutions tailored
               to their operational realities.
             </p>
@@ -210,7 +210,7 @@ export default function AboutContent() {
               </span>
 
               <p className="mt-3 font-serif text-2xl leading-snug text-[#1A1A1A]">
-                We advance, we execute, and we finish.
+                We advance, we execute and we finish.
               </p>
             </div>
           </div>
@@ -224,14 +224,14 @@ export default function AboutContent() {
             <SectionLabel>Who We Are</SectionLabel>
 
             <h2 className="mt-5 max-w-xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Helping businesses adapt, improve, and grow in a changing world.
+              Helping businesses adapt, improve and grow in a changing world.
             </h2>
           </div>
 
           <div className="space-y-7 lg:col-span-5">
             <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
               The modern business environment continues to evolve through
-              changing regulations, global competition, economic uncertainty,
+              changing regulations, global competition, economic uncertainty
               and operational complexity. Organizations today require more than
               theoretical advice — they need experienced partners capable of
               delivering practical and measurable outcomes.
@@ -239,9 +239,9 @@ export default function AboutContent() {
 
             <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
               At Averti, we work closely with our clients to understand their
-              business operations, corporate culture, and strategic priorities.
+              business operations, corporate culture and strategic priorities.
               This allows us to develop solutions that improve efficiency,
-              strengthen governance, and drive sustainable performance.
+              strengthen governance and drive sustainable performance.
             </p>
           </div>
 
@@ -322,7 +322,7 @@ export default function AboutContent() {
 
           <p className="max-w-md text-sm leading-7 text-[#FAF8F5]/75 lg:col-span-4">
             Our mission is to create value for organizations through strategic
-            insight, operational support, and long-term professional partnership.
+            insight, operational support and long-term professional partnership.
           </p>
         </div>
       </Reveal>
@@ -422,7 +422,7 @@ export default function AboutContent() {
             </span>
 
             <h2 className="mt-5 max-w-2xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              Build stronger operations, systems, and business performance with
+              Build stronger operations, systems and business performance with
               Averti.
             </h2>
 
