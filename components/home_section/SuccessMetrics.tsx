@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const metrics = [
   {
-    value: "120+",
+    value: "30+",
     label: "Years of Combined Experience",
   },
   {
@@ -44,7 +44,7 @@ export default function SuccessMetrics() {
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal leading-tight text-white max-w-lg">
-              Experience grounded in execution and institutional understanding.
+              Our approach is experience grounded in execution and institutional understanding.
             </h2>
 
             <p className="text-sm sm:text-base leading-relaxed text-white/75 max-w-md">

@@ -52,7 +52,7 @@ const disciplines = [
 const advantages = [
   {
     number: "01",
-    title: "120+ Years Combined Experience",
+    title: "30+ Years Combined Experience",
     desc: "Our team is composed of seasoned professionals with extensive experience across multiple sectors of the Nigerian economy.",
   },
   {
@@ -91,7 +91,7 @@ const services = [
 ];
 
 const proofPoints = [
-  { value: "120+", label: "Years Combined Experience" },
+  { value: "30+", label: "Years Combined Experience" },
   { value: "08", label: "Core Advisory Areas" },
   { value: "100%", label: "Client-Focused Approach" },
 ];
@@ -247,7 +247,7 @@ export default function AboutContent() {
 
           <div className="border-l border-[#93457A]/30 pl-6 lg:col-span-2 lg:self-end">
             <span className="font-serif text-5xl font-normal text-[#93457A]">
-              120+
+              30+
             </span>
 
             <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]">
