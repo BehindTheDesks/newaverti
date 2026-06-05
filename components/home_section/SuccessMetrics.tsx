@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const metrics = [
   {
-    value: "30+",
+    value: "120",
     label: "Years of Combined Experience",
   },
   {
@@ -72,7 +72,7 @@ export default function SuccessMetrics() {
                     {metric.value}
                   </span>
 
-                  <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60 leading-relaxed">
+                  <span className="block text-xs md:text-sm font-semibold uppercase tracking-[0.22em] text-white/60 leading-relaxed">
                     {metric.label}
                   </span>
                 </motion.div>

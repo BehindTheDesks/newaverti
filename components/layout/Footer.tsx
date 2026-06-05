@@ -20,15 +20,14 @@ export default function Footer() {
               <Image
                 src="/images/averti_logo.png"
                 alt="Averti Consulting Logo"
-                width={120}
+                width={140}
                 height={36}
                 style={{ height: "auto" }}
                 className="h-9 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs leading-relaxed text-[#93457A] max-w-sm">
-              Pioneering tomorrow&apos;s business standards through rigorous
-              precision and innovative strategy.
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-[#93457A] max-w-sm">
+              Pioneering tomorrow&apos;s innovation standards through. innovative strategy.
             </p>
           </div>
 
@@ -37,14 +36,14 @@ export default function Footer() {
             
             {/* Consulting */}
             <div className="space-y-4">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#93457A]">
+              <h5 className="text-sm md:text-base font-bold uppercase tracking-widest text-[#93457A]">
                 Consulting
               </h5>
               <ul className="space-y-2">
                 <li>
                   <Link 
                     href="/services" 
-                    className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Service
                   </Link>
@@ -52,7 +51,7 @@ export default function Footer() {
                 <li>
                   <Link 
                     href="/team" 
-                    className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Teams
                   </Link>
@@ -62,7 +61,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div className="space-y-4">
-              <h5 className="text-[10px] font-bold uppercase tracking-widest text-[#93457A]">
+              <h5 className="text-sm md:text-base font-bold uppercase tracking-widest text-[#93457A]">
                 Connect
               </h5>
               <ul className="space-y-2">
@@ -71,17 +70,17 @@ export default function Footer() {
                     href="https://linkedin.com" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
                     LinkedIn
                   </Link>
                 </li>
                 <li>
                   <Link 
-                    href="/insight" 
-                    className="text-xs text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                    href="/team" 
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Insights
+                    Meet the Team
                   </Link>
                 </li>
               </ul>
@@ -92,7 +91,7 @@ export default function Footer() {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="pt-8 border-t border-[#93457A] flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-[#93457A]">
+        <div className="pt-8 border-t border-[#93457A] flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-sm text-[#93457A]">
           <p>© 2026 Averti Consulting. All rights reserved.</p>
         </div>
 

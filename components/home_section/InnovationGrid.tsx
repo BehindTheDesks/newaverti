@@ -22,12 +22,12 @@ function PrincipleItem({ number, title, description }: PrincipleItemProps) {
           {number}
         </span>
 
-        <span className="text-[11px] font-semibold tracking-[0.25em] text-[#1A1A1A]">
+        <span className="text-xs font-semibold tracking-[0.25em] text-[#1A1A1A]">
           {title}
         </span>
       </div>
 
-      <p className="text-sm leading-relaxed text-[#4A4A4A]">
+      <p className="text-base leading-relaxed text-[#4A4A4A]">
         {description}
       </p>
     </motion.div>

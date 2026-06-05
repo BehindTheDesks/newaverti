@@ -4,11 +4,10 @@ import Image from "next/image";
 
 interface TeamMemberProps {
   name: string;
-  role: string;
   imageSrc: string;
 }
 
-function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
+function TeamMember({ name, imageSrc }: TeamMemberProps) {
   return (
     <div className="group space-y-4">
       {/* Portrait Image Container */}
@@ -25,13 +24,10 @@ function TeamMember({ name, role, imageSrc }: TeamMemberProps) {
       </div>
 
       {/* Name and Designation */}
-      <div className="space-y-1 pl-1">
-        <h4 className="text-lg font-medium tracking-tight text-[#1A1A1A] font-serif">
+      <div className="space-y-1 pl-1 flex flex-col items-center">
+        <h4 className="text-2xl sm:text-3xl font-center font-medium tracking-tight text-[#1A1A1A] font-serif">
           {name}
         </h4>
-        <p className="text-[10px] font-bold tracking-wider uppercase text-[#93457A]">
-          {role}
-        </p>
       </div>
     </div>
   );
@@ -45,7 +41,7 @@ export default function Team() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight font-serif text-[#1A1A1A]">
-            The Averti Collective
+            Averti Founding Partners
           </h2>
           <p className="text-sm sm:text-base text-[#4A4A4A] leading-relaxed">
             Our partners bring decades of institutional knowledge from the
@@ -57,17 +53,14 @@ export default function Team() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <TeamMember
             name="Inyang Sami-Orungbe"
-            role="Financial Planning & Business Development Consultant"
             imageSrc="/images/inyang_sami_orungbe.jpeg"
           />
           <TeamMember
             name="Bukki Orekoya"
-            role="Management & Financial Consultant"
             imageSrc="/images/bukki_orekoya.jpeg"
           />
           <TeamMember
             name="Cecilia Osoka"
-            role="Accounting, Banking & Operations Consultant"
             imageSrc="/images/cecilia_osoka.jpeg"
           />
         </div>

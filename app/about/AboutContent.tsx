@@ -52,7 +52,7 @@ const disciplines = [
 const advantages = [
   {
     number: "01",
-    title: "30+ Years Combined Experience",
+    title: "120+ Years Combined Experience",
     desc: "Our team is composed of seasoned professionals with extensive experience across multiple sectors of the Nigerian economy.",
   },
   {
@@ -91,7 +91,7 @@ const services = [
 ];
 
 const proofPoints = [
-  { value: "30+", label: "Years Combined Experience" },
+  { value: "120+", label: "Years Combined Experience" },
   { value: "08", label: "Core Advisory Areas" },
   { value: "100%", label: "Client-Focused Approach" },
 ];
@@ -103,7 +103,7 @@ const reveal = {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="block text-[11px] font-semibold uppercase tracking-[0.28em] text-[#93457A]">
+    <span className="block text-sm sm:text-base font-semibold uppercase tracking-[0.28em] text-[#93457A]">
       {children}
     </span>
   );
@@ -161,10 +161,7 @@ export default function AboutContent() {
 
             <p className="mt-7 max-w-xl text-base leading-8 text-[#4A4A4A] sm:text-lg">
               Averti Professional Managers is a multidisciplinary consulting and
-              advisory firm focused on business advancement, financing, process
-              optimization and human capital development. We help organizations
-              navigate complexity with practical, sustainable solutions tailored
-              to their operational realities.
+              advisory firm focused on audit, taxation, business engineering, report accountancy and financial management.
             </p>
 
             <div className="mt-12 grid grid-cols-1 gap-px border-y border-[#1A1A1A]/10 bg-[#1A1A1A]/10 sm:grid-cols-3 lg:max-w-xl">
@@ -210,7 +207,7 @@ export default function AboutContent() {
               </span>
 
               <p className="mt-3 font-serif text-2xl leading-snug text-[#1A1A1A]">
-                We advance, we execute and we finish.
+                We advance, We Execute and We Finish.
               </p>
             </div>
           </div>
@@ -229,7 +226,7 @@ export default function AboutContent() {
           </div>
 
           <div className="space-y-7 lg:col-span-5">
-            <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
+            <p className="text-sm sm:text-xl leading-7 text-[#4A4A4A] sm:text-base">
               The modern business environment continues to evolve through
               changing regulations, global competition, economic uncertainty
               and operational complexity. Organizations today require more than
@@ -237,9 +234,9 @@ export default function AboutContent() {
               delivering practical and measurable outcomes.
             </p>
 
-            <p className="text-sm leading-7 text-[#4A4A4A] sm:text-base">
-              At Averti, we work closely with our clients to understand their
-              business operations, corporate culture and strategic priorities.
+            <p className="text-sm sm:text-xl leading-7 text-[#4A4A4A] sm:text-base">
+              At Averti Professional Mangers, we work closely with our clients to understand their
+              pain points.
               This allows us to develop solutions that improve efficiency,
               strengthen governance and drive sustainable performance.
             </p>
@@ -247,7 +244,7 @@ export default function AboutContent() {
 
           <div className="border-l border-[#93457A]/30 pl-6 lg:col-span-2 lg:self-end">
             <span className="font-serif text-5xl font-normal text-[#93457A]">
-              30+
+              120+
             </span>
 
             <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]">

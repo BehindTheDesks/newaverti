@@ -17,7 +17,7 @@ export default function Hero() {
           className="lg:col-span-6 flex flex-col justify-center space-y-10"
         >
           <div className="space-y-4">
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#93457A]">
+            <span className="inline-block text-xs md:text-sm font-semibold uppercase tracking-widest text-[#93457A]">
               The Future of Enterprise
             </span>
 
@@ -29,28 +29,28 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-base sm:text-lg leading-relaxed text-[#4A4A4A] max-w-xl">
-            Averti Professional Managers partners with organizations to deliver practical solutions across finance, operations, governance and human capital development.
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-[#4A4A4A] max-w-xl">
+            Averti Professional Managers partners with organizations to deliver practical solutions across audit, taxation, business engineering, report accountancy and financial management .
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-white bg-[#93457A] hover:bg-[#7B3566] transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-[#93457A] hover:bg-[#7B3566] transition-all duration-300"
             >
               Explore Services
             </Link>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-[#1A1A1A] bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold text-[#1A1A1A] bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow"
             >
               Schedule Consultation
             </Link>
           </div>
 
           {/* TRUST LINE */}
-          <p className="text-xs tracking-wide text-[#4A4A4A] pt-2">
+          <p className="text-xs sm:text-sm tracking-wide text-[#4A4A4A] pt-2">
             Trusted across finance, governance and enterprise transformation in West Africa.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function Hero() {
             className="absolute -bottom-6 left-6 bg-white/95 backdrop-blur-md px-7 py-5 rounded-xl shadow-lg border border-gray-100"
           >
             <span className="text-3xl font-bold font-serif text-[#93457A]">
-              94%
+              100%
             </span>
             <p className="text-[10px] font-semibold tracking-widest text-[#4A4A4A] uppercase">
               Client Retention

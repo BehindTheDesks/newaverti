@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-brand-purple border-b border-[#93457A]/5 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-32 flex items-center justify-between">
           {/* Logo */}
           <Link 
             href="/" 
@@ -44,8 +44,8 @@ export default function Navbar() {
             <Image
               src="/images/averti_logo_new.png"
               alt="Averti Consulting Logo"
-              width={120}
-              height={36}
+              width={130}
+              height={30}
               priority
               style={{ height: "auto" }}
               className="h-9 w-auto object-contain"
@@ -60,7 +60,7 @@ export default function Navbar() {
                 <Link 
                   key={link.href}
                   href={link.href} 
-                  className={`text-sm font-medium transition-all duration-200 relative py-1 ${
+                  className={`text-sm md:text-lg font-medium transition-all duration-200 relative py-1 ${
                     active 
                       ? "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#FAF8F5] after:rounded-full" 
                       : "text-[#FAF8F5]/80 hover:text-white"
@@ -76,7 +76,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide text-[#93457A] bg-[#FAF8F5] hover:text-white hover:bg-brand-purple transition-all duration-300 transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide text-[#93457A] bg-[#FAF8F5] hover:text-white hover:bg-brand-purple transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Book A Consultation
             </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
               className="inline-flex items-center justify-center p-2 rounded-full text-[#FAF8F5] hover:bg-white/10 active:scale-95 transition-all duration-200"
               aria-label="Open Menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-8 h-8" />
             </button>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function Navbar() {
             <Image
               src="/images/averti_logo_new.png"
               alt="Averti Consulting Logo"
-              width={100}
+              width={120}
               height={30}
               style={{ height: "auto" }}
               className="h-7 w-auto object-contain rounded-md"
@@ -130,7 +130,7 @@ export default function Navbar() {
             className="inline-flex items-center justify-center p-2 rounded-full text-[#FAF8F5] hover:bg-white/10 active:scale-95 transition-all duration-200"
             aria-label="Close Menu"
           >
-            <X className="w-6 h-6" />
+            <X className="w-8 h-8" />
           </button>
         </div>
 

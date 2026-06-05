@@ -10,11 +10,11 @@ export default function CTA() {
         {/* Title & Subtitle */}
         <div className="space-y-4">
           <h2 className="text-4xl sm:text-5xl font-normal tracking-tight font-serif text-[#1A1A1A]">
-            Ready to evolve?
+            Private conversation with out Team
           </h2>
           <p className="text-sm sm:text-base text-[#4A4A4A] leading-relaxed max-w-xl mx-auto">
             Schedule a private consultation with our principal partners to discuss
-            your organization&apos;s trajectory.
+            your organization&apos;s requirements.
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export default function CTA() {
         <div className="pt-2">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-[#93457A] hover:bg-[#7B3566] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+            className="inline-flex items-center text-base justify-center px-10 py-4 rounded-full text-xs font-semibold tracking-widest uppercase text-white bg-[#93457A] hover:bg-[#7B3566] shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
           >
             Initiate Dialogue
           </Link>
