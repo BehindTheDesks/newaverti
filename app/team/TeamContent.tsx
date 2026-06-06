@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, Award, Building, ChevronDown } from "lucide-react";
+import { ArrowRight, Award, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const leaders = [
@@ -28,17 +28,11 @@ const leaders = [
 
       Inyang is additionally certified as a Retirement Life Coach by Retirement Life Plan.`,
 
-    specialties: [
-      "Financial & Retirement Planning",
-      "Business Development & Marketing",
-      "Customer Relationship Management",
-    ],
 
     education:
       "B.Sc. Business Administration, Rivers State University of Science and Technology | MBA, ESUT Business School Lagos | MCIoD | FNIMN | CIPM",
 
-    quote:
-      "Sustainable growth is achieved through disciplined planning, strong relationships and long-term value creation.",
+    
   },
   {
     name: "Bukki Orekoya",
@@ -58,18 +52,12 @@ const leaders = [
 
     She also served as the first Nigerian Chief Accountant and Company Secretary at Paterson Candy International Nigeria Limited, a subsidiary of Thames Water, United Kingdom, where she contributed significantly to the company’s financial management and corporate governance operations.`,
 
-    specialties: [
-      "Audit & Financial Advisory",
-      "Taxation & Financial Management",
-      "Corporate Advisory & Internal Controls",
-    ],
+   
 
     education:
       "Fellow, Institute of Chartered Accountants of Nigeria (FCA) | Member, Nigerian Institute of Management (MNIM) | Associate, Chartered Institute of Taxation of Nigeria (ACIT)",
 
-    quote:
-      "Strong organizations are built on sound financial management, accountability and disciplined leadership.",
-  },
+     },
   {
     name: "Cecilia Osoka",
     role: "Accounting, Banking & Operations Consultant",
@@ -96,17 +84,10 @@ const leaders = [
 
     As a founding Partner at Averti Professional Managers, her focus includes financial institutions training programmes, banking operations advisory and business process improvement projects.`,
 
-    specialties: [
-      "Banking Operations & Treasury Management",
-      "Business Process Improvement",
-      "Accounting, Consultancy & Professional Training",
-    ],
-
     education:
       "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | FCA | HCIBN | ACITN",
 
-    quote:
-      "Operational excellence is achieved through discipline, continuous improvement and strong financial systems.",
+    
   },
 ];
 
@@ -197,8 +178,7 @@ export default function TeamContent() {
         >
           {leaders.map((leader, index) => {
             const isOpen = openProfile === leader.name;
-            const isReversed = index % 2 === 1;
-
+            
             return (
               <motion.article
                 key={leader.name}
@@ -207,9 +187,7 @@ export default function TeamContent() {
                 className="border-b border-[#1A1A1A]/10 pb-10 lg:pb-14"
               >
                 <div
-                  className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16 ${
-                    isReversed ? "lg:[&>*:first-child]:order-2" : ""
-                  }`}
+                  className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16 `}
                 >
                   <div className="lg:col-span-5">
                     <div className="group relative aspect-[3/4] overflow-hidden border border-[#1A1A1A]/10 bg-[#93457A]/5">
@@ -226,9 +204,7 @@ export default function TeamContent() {
                   </div>
 
                   <div
-                    className={`lg:col-span-6 ${
-                      isReversed ? "lg:text-right" : "lg:col-start-7"
-                    }`}
+                    className={`lg:col-span-6 `}
                   >
                     <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#93457A]">
                       {leader.role}
@@ -240,20 +216,7 @@ export default function TeamContent() {
                       {leader.intro}
                     </p>
 
-                    <div
-                      className={`mt-7 flex flex-wrap gap-2 ${
-                        isReversed ? "lg:justify-end" : ""
-                      }`}
-                    >
-                      {leader.specialties.map((specialty) => (
-                        <span
-                          key={specialty}
-                          className="border border-[#1A1A1A]/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#4A4A4A]"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
+                    
 
                     <button
                       type="button"
@@ -261,15 +224,13 @@ export default function TeamContent() {
                         setOpenProfile(isOpen ? null : leader.name)
                       }
                       aria-expanded={isOpen}
-                      className={`mt-8 inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#93457A] transition-colors duration-300 hover:text-[#7B3566] ${
-                        isReversed ? "lg:flex-row-reverse" : ""
-                      }`}
+                      className={`mt-8 inline-flex items-center text-xs font-semibold uppercase tracking-[0.18em] text-[#93457A] transition-colors duration-300 hover:text-[#7B3566]`}
                     >
                       <span>{isOpen ? "Close Profile" : "Read More"}</span>
                       <ChevronDown
                         className={`h-4 w-4 transition-transform duration-300 ${
                           isOpen ? "rotate-180" : ""
-                        } ${isReversed ? "mr-2" : "ml-2"}`}
+                        } `}
                         aria-hidden="true"
                       />
                     </button>
@@ -299,9 +260,7 @@ export default function TeamContent() {
                           className="overflow-hidden"
                         >
                           <div
-                            className={`mt-8 border-t border-[#1A1A1A]/10 pt-7 ${
-                              isReversed ? "lg:ml-auto" : ""
-                            }`}
+                            className={`mt-8 border-t border-[#1A1A1A]/10 pt-7 `}
                           >
                             <p className="text-sm font-light leading-7 text-[#4A4A4A]">
                               {leader.bio}
@@ -309,9 +268,7 @@ export default function TeamContent() {
                             <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">
                               <div>
                                 <div
-                                  className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${
-                                    isReversed ? "lg:justify-end" : ""
-                                  }`}
+                                  className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] `}
                                 >
                                   <Award
                                     className="h-4 w-4 text-[#93457A]"
@@ -321,22 +278,6 @@ export default function TeamContent() {
                                 </div>
                                 <p className="mt-3 text-xs font-light leading-6 text-[#4A4A4A]">
                                   {leader.education}
-                                </p>
-                              </div>
-                              <div>
-                                <div
-                                  className={`flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] ${
-                                    isReversed ? "lg:justify-end" : ""
-                                  }`}
-                                >
-                                  <Building
-                                    className="h-4 w-4 text-[#93457A]"
-                                    aria-hidden="true"
-                                  />
-                                  <span>Advisory View</span>
-                                </div>
-                                <p className="mt-3 font-serif text-lg italic leading-snug text-[#93457A]">
-                                  &ldquo;{leader.quote}&rdquo;
                                 </p>
                               </div>
                             </div>
@@ -399,17 +340,17 @@ export default function TeamContent() {
       >
         <div className="border border-[#1A1A1A]/10 bg-white p-8 text-center sm:p-12 lg:p-16">
           <h2 className="font-serif text-3xl font-normal leading-tight sm:text-4xl">
-            Ready to transform your trajectory?
+            Ready to transform your Organization?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-7 text-[#4A4A4A]">
-            Engage with our executive partners to discuss how Averti can
+            Engage with our executive partners to discuss how Averti Professional Managers can
             engineer your organization&apos;s next phase of growth.
           </p>
           <Link
             href="/contact"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-[#93457A] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-[#7B3566]"
           >
-            Connect for Strategic Consultation
+            Contact Us
             <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Link>
         </div>

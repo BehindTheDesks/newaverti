@@ -40,16 +40,16 @@ const contactDetails: ContactDetail[] = [
   },
   {
     icon: Mail,
-    eyebrow: "Advisory Email",
+    eyebrow: "Averti Professional Management Email",
     title: "info@averti.com.ng",
     detail: "Confidential partner communication",
     href: "mailto:info@averti.com.ng",
   },
   {
     icon: Phone,
-    eyebrow: "Institutional Relations",
+    eyebrow: "Phone Number",
     title: "+234 1 794 3620",
-    detail: "Monday — Friday · 09:00 — 18:00 WAT",
+    detail: "Monday — Friday · 09:00 — 17:00 WAT",
     href: "tel:+23417943620",
   },
 ];
@@ -196,7 +196,7 @@ export default function ContactPage() {
 
   return (
     <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
-      <motion.section
+      {/* <motion.section
         variants={reveal}
         initial="hidden"
         animate="show"
@@ -219,7 +219,7 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <section className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16">
         <motion.aside
@@ -239,11 +239,10 @@ export default function ContactPage() {
           <motion.div variants={reveal} transition={transition}>
             <SectionLabel>Global Presence</SectionLabel>
             <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
-              A private channel for executive inquiry.
+              Have an inquiry? Send us a Message.
             </h2>
             <p className="mt-6 max-w-md text-sm font-light leading-7 text-[#4A4A4A]">
-              Consultation requests are reviewed with discretion and routed to
-              senior advisory partners according to mandate complexity.
+              Consultation requests are reviewed and sent back with the necessary informaton needed for growth of your organization.
             </p>
           </motion.div>
 
@@ -421,15 +420,13 @@ export default function ContactPage() {
                       <span>Validating Request...</span>
                     ) : (
                       <>
-                        <span>Initiate Inquiry</span>
+                        <span>Send Inquiry</span>
                         <Send className="ml-2 h-4 w-4" aria-hidden="true" />
                       </>
                     )}
                   </button>
-                  <p className="flex items-center gap-2 text-xs font-light leading-6 text-[#4A4A4A]">
-                    <Clock3 className="h-4 w-4 text-[#93457A]" aria-hidden="true" />
-                    Senior advisory response within 24 hours.
-                  </p>
+                  
+                  
                 </div>
               </form>
             ) : (
@@ -504,7 +501,7 @@ export default function ContactPage() {
         <p className="mx-auto mt-6 max-w-3xl text-sm font-light leading-7 text-[#4A4A4A] sm:text-base sm:leading-8">
           Every consultation is treated as a confidential engagement, ensuring
           your organization&apos;s intellectual property and long-term vision
-          remain protected while we engineer competitive advantage.
+          remain protected while we create an advantage for you.
         </p>
       </motion.section>
     </div>
