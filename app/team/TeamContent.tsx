@@ -9,7 +9,6 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 const leaders = [
   {
     name: "Inyang Sami-Orungbe",
-    role: "Financial Planning & Business Development Consultant",
     imageSrc: "/images/inyang_sami_orungbe.jpeg",
     intro:
       "Inyang is an experienced financial planning and business development professional with over 35 years of expertise spanning banking, pensions, investment advisory, customer relations and strategic marketing.",
@@ -36,7 +35,6 @@ const leaders = [
   },
   {
     name: "Bukki Orekoya",
-    role: "Management & Financial Consultant",
     imageSrc: "/images/bukki_orekoya.jpeg",
 
     intro:
@@ -60,7 +58,6 @@ const leaders = [
      },
   {
     name: "Cecilia Osoka",
-    role: "Accounting, Banking & Operations Consultant",
     imageSrc: "/images/cecilia_osoka.jpeg",
 
     intro:
@@ -116,31 +113,6 @@ export default function TeamContent() {
 
   return (
     <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
-      <motion.section
-        variants={reveal}
-        initial="hidden"
-        animate="show"
-        transition={transition}
-        className="border-b border-[#1A1A1A]/10"
-      >
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:gap-16 lg:py-28">
-          <div className="lg:col-span-6">
-            <SectionLabel>Institutional Leadership</SectionLabel>
-            <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">
-              Guided by strategic insight.{" "}
-              <span className="italic text-[#93457A]">
-                Anchored in precision.
-              </span>
-            </h1>
-          </div>
-          <div className="flex items-end lg:col-span-5 lg:col-start-8">
-            <p className="max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
-              Meet the executive leadership driving transformation and
-              sustainable growth for ambitious organizations.
-            </p>
-          </div>
-        </div>
-      </motion.section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
         <motion.div
@@ -152,13 +124,11 @@ export default function TeamContent() {
           className="grid grid-cols-1 gap-10 border-b border-[#1A1A1A]/10 pb-14 lg:grid-cols-12 lg:gap-16"
         >
           <div className="border-l-2 border-[#93457A] pl-5 lg:col-span-4">
-            <h2 className="font-serif text-2xl font-normal">Our Leadership</h2>
+            <h2 className="font-serif text-3xl font-normal">Our Leadership</h2>
           </div>
-          <p className="max-w-3xl text-sm font-light leading-7 text-[#4A4A4A] lg:col-span-7 lg:col-start-6">
+          <p className="max-w-3xl text-base md:text-xl font-light leading-7 text-[#4A4A4A] lg:col-span-7 lg:col-start-6">
             Averti&apos;s leadership team brings together decades of
-            multidisciplinary expertise across global finance, strategy and
-            operations. We are committed to engineering institutional rigor and
-            delivering precision-led solutions for complex business challenges.
+            multidisciplinary expertise across auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
           </p>
         </motion.div>
 
@@ -187,7 +157,7 @@ export default function TeamContent() {
                 className="border-b border-[#1A1A1A]/10 pb-10 lg:pb-14"
               >
                 <div
-                  className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16 `}
+                  className={`grid grid-cols-1  gap-8 lg:grid-cols-12 lg:gap-16 `}
                 >
                   <div className="lg:col-span-5">
                     <div className="group relative aspect-[3/4] overflow-hidden border border-[#1A1A1A]/10 bg-[#93457A]/5">
@@ -206,13 +176,11 @@ export default function TeamContent() {
                   <div
                     className={`lg:col-span-6 `}
                   >
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#93457A]">
-                      {leader.role}
-                    </span>
-                    <h3 className="mt-4 font-serif text-3xl font-normal leading-tight sm:text-4xl">
+                    
+                    <h3 className="mt-4 font-serif text-3xl sm:text-4xl font-normal leading-tight lg:text-5xl">
                       {leader.name}
                     </h3>
-                    <p className="mt-5 text-sm font-light leading-7 text-[#4A4A4A] sm:text-base sm:leading-8">
+                    <p className="mt-5 text-base md:text-lg font-light leading-7 text-[#4A4A4A] sm:text-xl sm:leading-8">
                       {leader.intro}
                     </p>
 
@@ -262,7 +230,7 @@ export default function TeamContent() {
                           <div
                             className={`mt-8 border-t border-[#1A1A1A]/10 pt-7 `}
                           >
-                            <p className="text-sm font-light leading-7 text-[#4A4A4A]">
+                            <p className="text-base md:text-lg font-light leading-7 text-[#4A4A4A]">
                               {leader.bio}
                             </p>
                             <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -293,7 +261,7 @@ export default function TeamContent() {
         </motion.div>
       </section>
 
-      <motion.section
+      {/* <motion.section
         variants={reveal}
         initial="hidden"
         whileInView="show"
@@ -328,7 +296,7 @@ export default function TeamContent() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.section
         variants={reveal}
@@ -339,12 +307,11 @@ export default function TeamContent() {
         className="mx-auto max-w-7xl px-6 py-20 sm:py-24"
       >
         <div className="border border-[#1A1A1A]/10 bg-white p-8 text-center sm:p-12 lg:p-16">
-          <h2 className="font-serif text-3xl font-normal leading-tight sm:text-4xl">
+          <h2 className="font-serif text-4xl font-normal leading-tight sm:text-5xl">
             Ready to transform your Organization?
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-7 text-[#4A4A4A]">
-            Engage with our executive partners to discuss how Averti Professional Managers can
-            engineer your organization&apos;s next phase of growth.
+          <p className="mx-auto mt-5 max-w-xl text-base font-light leading-7 text-[#4A4A4A]">
+            Book a session with our team to discuss your organization&apos;s requirements and how we can support you in achieving your strategic objectives.
           </p>
           <Link
             href="/contact"

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CheckCircle2, Clock3, Mail, MapPin, Phone, Send, ShieldCheck, LucideIcon} from "lucide-react";
+import { CheckCircle2, Clock3, Mail, MapPin, Send, ShieldCheck, LucideIcon} from "lucide-react";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 
 type FormData = {
@@ -33,23 +33,23 @@ const initialFormData: FormData = {
 const contactDetails: ContactDetail[] = [
   {
     icon: MapPin,
-    eyebrow: "Averti Professional Managers",
+    eyebrow: "Address",
     title: "2 Adepegba Street, Ilupeju",
     detail: "Lagos, Nigeria",
     href: "https://maps.google.com/?q=2+Adepegba+Street+Ilupeju+Lagos",
   },
   {
     icon: Mail,
-    eyebrow: "Averti Professional Management Email",
+    eyebrow: "Email Address",
     title: "info@averti.com.ng",
-    detail: "Confidential partner communication",
+    detail: "",
     href: "mailto:info@averti.com.ng",
   },
   {
-    icon: Phone,
-    eyebrow: "Phone Number",
-    title: "+234 1 794 3620",
-    detail: "Monday — Friday · 09:00 — 17:00 WAT",
+    icon: Clock3,
+    eyebrow: "Working Hours",
+    title: "Monday — Friday · 09:00 — 17:00 WAT",
+    detail: "",
     href: "tel:+23417943620",
   },
 ];
@@ -115,13 +115,6 @@ function getPrefillFromUrl() {
   return initialFormData;
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="block text-[11px] font-semibold uppercase tracking-[0.28em] text-[#93457A]">
-      {children}
-    </span>
-  );
-}
 
 function Field({
   id,
@@ -237,12 +230,11 @@ export default function ContactPage() {
           className="lg:col-span-5"
         >
           <motion.div variants={reveal} transition={transition}>
-            <SectionLabel>Global Presence</SectionLabel>
             <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
               Have an inquiry? Send us a Message.
             </h2>
             <p className="mt-6 max-w-md text-sm font-light leading-7 text-[#4A4A4A]">
-              Consultation requests are reviewed and sent back with the necessary informaton needed for growth of your organization.
+              Consultation requests are reviewed and sent back with the necessary informaton needed for the growth of your organization.
             </p>
           </motion.div>
 
@@ -329,16 +321,9 @@ export default function ContactPage() {
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="border-b border-[#1A1A1A]/10 pb-7">
-                  <SectionLabel>Professional Inquiry</SectionLabel>
-
-                  <h2 className="mt-4 font-serif text-3xl font-normal leading-tight">
-                    Tell us where strategic clarity is needed.
+                  <h2 className="mt-4 text-[#93457A] font-serif text-xl sm:text-4xl lg:text-5xl font-normal leading-tight">
+                    Professional Inquiry
                   </h2>
-
-                  <p className="mt-4 max-w-2xl text-sm font-light leading-7 text-[#4A4A4A]">
-                    Strategic consultations are reviewed confidentially by senior advisory
-                    partners and routed according to operational scope.
-                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -484,25 +469,6 @@ export default function ContactPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-black/35" />
         </div>
-      </motion.section>
-
-      <motion.section
-        variants={reveal}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.18 }}
-        transition={transition}
-        className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24"
-      >
-        <ShieldCheck className="mx-auto h-7 w-7 text-[#93457A]" aria-hidden="true" />
-        <h2 className="mt-8 font-serif text-3xl font-normal leading-tight sm:text-4xl">
-          Precision in strategy. Integrity in partnership.
-        </h2>
-        <p className="mx-auto mt-6 max-w-3xl text-sm font-light leading-7 text-[#4A4A4A] sm:text-base sm:leading-8">
-          Every consultation is treated as a confidential engagement, ensuring
-          your organization&apos;s intellectual property and long-term vision
-          remain protected while we create an advantage for you.
-        </p>
       </motion.section>
     </div>
   );
