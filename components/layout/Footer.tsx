@@ -26,9 +26,7 @@ export default function Footer() {
                 className="h-9 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-[#93457A] max-w-sm">
-              Pioneering tomorrow&apos;s innovation standards through. innovative strategy.
-            </p>
+            
           </div>
 
           {/* Links Columns */}
@@ -37,7 +35,7 @@ export default function Footer() {
             {/* Consulting */}
             <div className="space-y-4">
               <h5 className="text-sm md:text-base font-bold uppercase tracking-widest text-[#93457A]">
-                Consulting
+                AVERTI
               </h5>
               <ul className="space-y-2">
                 <li>
@@ -56,6 +54,22 @@ export default function Footer() {
                     Teams
                   </Link>
                 </li>
+                <li>
+                  <Link 
+                    href="/about" 
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/contact" 
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -67,7 +81,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/company/averti-professional-mangers/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
@@ -77,10 +91,12 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link 
-                    href="/team" 
+                    href="https://www.instagram.com/avertipm?igsh=ZzRxZWk4YmJjdTRI/"
+                    target="_blank"
+                    rel="noopener noreferrer" 
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Meet the Team
+                    Instagram
                   </Link>
                 </li>
               </ul>
@@ -92,7 +108,7 @@ export default function Footer() {
 
         {/* Divider & Copyright */}
         <div className="pt-8 border-t border-[#93457A] flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-sm text-[#93457A]">
-          <p>© 2026 Averti Consulting. All rights reserved.</p>
+          <p>© 2026 Averti Professional Managers. All rights reserved.</p>
         </div>
 
       </div>

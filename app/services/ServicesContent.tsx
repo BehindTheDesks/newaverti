@@ -28,36 +28,36 @@ type Service = {
 const services: Service[] = [
   {
     icon: ClipboardCheck,
-    title: "Audit & Quality Assurance",
-    tagline: "Operational Accountability",
+    title: "Auditing Services",
+    tagline: "Assurance & Accountability",
     description:
-      "Independent audit and assurance solutions designed to strengthen transparency, improve reporting confidence and support sound corporate governance.",
+      "Independent audit and assurance services designed to strengthen governance, enhance transparency, and provide stakeholders with confidence in financial and operational reporting.",
     bullets: [
-      "Internal & external audit support",
-      "Compliance and control reviews",
-      "Risk identification frameworks",
-      "Operational process evaluations",
-    ],
-  },
-  {
-    icon: Landmark,
-    title: "Financial Advisory",
-    tagline: "Strategic Financial Direction",
-    description:
-      "Practical financial management and advisory services that help organizations improve performance, manage growth and optimize decision-making.",
-    bullets: [
-      "Financial planning & analysis",
-      "Budgeting and forecasting",
-      "Business performance evaluation",
-      "Capital structure guidance",
+      "Statutory audits",
+      "Internal audit reviews",
+      "Risk and control assessments",
+      "Compliance evaluations",
     ],
   },
   {
     icon: FileSpreadsheet,
-    title: "Tax Advisory Services",
-    tagline: "Regulatory Confidence",
+    title: "Accountancy Services",
+    tagline: "Financial Accuracy & Control",
     description:
-      "Comprehensive tax planning and compliance support structured to reduce exposure, improve efficiency and maintain regulatory alignment.",
+      "Professional accounting solutions that support sound financial management, accurate reporting, and effective business decision-making.",
+    bullets: [
+      "Financial statement preparation",
+      "Bookkeeping and records management",
+      "Accounting system reviews",
+      "Management accounts",
+    ],
+  },
+  {
+    icon: Landmark,
+    title: "Taxation Services",
+    tagline: "Compliance & Tax Efficiency",
+    description:
+      "Comprehensive tax advisory and compliance support that helps organizations meet regulatory obligations while optimizing tax efficiency.",
     bullets: [
       "Corporate tax advisory",
       "Tax planning strategies",
@@ -67,45 +67,44 @@ const services: Service[] = [
   },
   {
     icon: BriefcaseBusiness,
-    title: "Corporate Consultancy",
-    tagline: "Business Transformation",
+    title: "Financial Management Advisory",
+    tagline: "Strategic Financial Stewardship",
     description:
-      "Strategic consulting engagements focused on operational growth, organizational restructuring and long-term institutional development.",
+      "Financial advisory services focused on strengthening organizational performance, improving resource allocation, and supporting sustainable growth.",
     bullets: [
-      "Business process improvement",
-      "Corporate restructuring",
-      "Governance advisory",
-      "Strategic growth planning",
+      "Financial planning and analysis",
+      "Budgeting and forecasting",
+      "Performance evaluation",
+      "Strategic financial guidance",
     ],
   },
   {
     icon: UsersRound,
-    title: "Human Capital Management",
-    tagline: "People & Performance",
+    title: "Human Capital Development",
+    tagline: "Building Organizational Capability",
     description:
-      "Workforce solutions that help organizations attract, develop and retain high-performing teams aligned with business objectives.",
+      "People-focused solutions designed to enhance workforce effectiveness, leadership capability, and long-term organizational performance.",
     bullets: [
-      "Talent acquisition strategy",
+      "Leadership development",
       "Performance management systems",
       "Workforce planning",
-      "Organizational culture support",
+      "Talent development initiatives",
     ],
   },
   {
     icon: GraduationCap,
-    title: "Training & Development",
-    tagline: "Capacity Building",
+    title: "Training & Consultancy Services",
+    tagline: "Knowledge, Growth & Transformation",
     description:
-      "Professional development programs designed to strengthen leadership capability, improve technical competence and drive organizational efficiency.",
+      "Professional training and consulting engagements that equip organizations with the skills, systems, and strategies required for sustainable success.",
     bullets: [
-      "Executive development programs",
-      "Corporate workshops & seminars",
-      "Technical skills training",
-      "Leadership enhancement initiatives",
+      "Executive development programmes",
+      "Corporate training workshops",
+      "Business process improvement",
+      "Organizational consulting",
     ],
   },
 ];
-
 const capabilities = [
   {
     icon: ShieldCheck,
@@ -202,21 +201,19 @@ export default function ServicesContent() {
             <SectionLabel>Professional Services</SectionLabel>
 
             <h1 className="mt-6 max-w-3xl font-serif text-4xl font-normal leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">
-              Advisory solutions built for{" "}
+              Strategic Advisory for{" "}
               <span className="italic text-[#93457A]">
-                sustainable business performance
+                business growth
               </span>
             </h1>
 
             <p className="mt-7 max-w-xl text-base font-light leading-8 text-[#4A4A4A] sm:text-lg">
-              Averti Professional Managers delivers multidisciplinary consulting,
-              financial, operational and workforce solutions tailored to the
-              realities of modern organizations and evolving business environments.
+              Averti Professional Managers delivers multidisciplinary auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="#services"
+                href="/services"
                 className="inline-flex items-center justify-center rounded-full bg-[#93457A] px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-[#7B3566]"
               >
                 Explore Services
@@ -244,36 +241,20 @@ export default function ServicesContent() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
             </div>
-
-            <div className="absolute -bottom-8 left-4 w-[min(84%,380px)] border border-[#1A1A1A]/10 bg-[#FAF8F5]/95 p-6 shadow-xl backdrop-blur sm:left-10">
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[#93457A]">
-                Integrated Advisory
-              </span>
-
-              <p className="mt-3 font-serif text-2xl leading-snug">
-                Structured solutions across finance, governance, operations and
-                organizational development.
-              </p>
-            </div>
+            
           </div>
         </div>
       </motion.section>
 
       {/* SERVICES GRID */}
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4">
+        <div className=" space-y-16">
+          <div className="flex flex-col items-center">
             <SectionLabel>Core Service Areas</SectionLabel>
 
-            <h2 className="mt-5 max-w-sm font-serif text-3xl font-normal leading-tight sm:text-4xl">
+            <h2 className="mt-5 uppercase max-w-6xl text-center font-serif text-2xl font-normal leading-tight sm:text-3xl">
               Solutions designed around operational clarity and business growth.
             </h2>
-
-            <p className="mt-6 max-w-sm text-sm font-light leading-7 text-[#4A4A4A]">
-              Every engagement is structured to help organizations improve
-              efficiency, strengthen governance and build sustainable systems for
-              long-term performance.
-            </p>
           </div>
 
           <motion.div
@@ -289,7 +270,7 @@ export default function ServicesContent() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.14 }}
-            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-8"
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8"
           >
             {services.map((service) => {
               const Icon = service.icon;
@@ -357,7 +338,7 @@ export default function ServicesContent() {
       </Reveal>
 
       {/* OPERATING MODEL */}
-      <Reveal className="border-y border-[#1A1A1A]/10 bg-white/45">
+      {/* <Reveal className="border-y border-[#1A1A1A]/10 bg-white/45">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-20 sm:py-24 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
             <SectionLabel>Our Approach</SectionLabel>
@@ -415,7 +396,7 @@ export default function ServicesContent() {
             </div>
           </div>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       {/* CAPABILITIES */}
       <Reveal className="bg-[#1A1A1A] py-14 text-white">
@@ -468,7 +449,7 @@ export default function ServicesContent() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-all duration-300 hover:bg-transparent hover:text-white"
             >
-              Schedule Consultation
+              Contact Us
 
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </Link>

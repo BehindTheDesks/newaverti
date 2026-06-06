@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <RefinedStrategies />
+      {/* REPLACE WITH VISION AND MISSON ALONGSIDE CORE VALUES */}
+      {/* <RefinedStrategies /> */}
       <InnovationGrid />
       <SuccessMetrics />
       <Team />

@@ -30,7 +30,7 @@ export default function Hero() {
           </div>
 
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-[#4A4A4A] max-w-xl">
-            Averti Professional Managers partners with organizations to deliver practical solutions across audit, taxation, business engineering, report accountancy and financial management .
+            Averti Professional Managers partners with organizations to deliver practical solutions across auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -48,11 +48,6 @@ export default function Hero() {
               Schedule Consultation
             </Link>
           </div>
-
-          {/* TRUST LINE */}
-          <p className="text-xs sm:text-sm tracking-wide text-[#4A4A4A] pt-2">
-            Trusted across finance, governance and enterprise transformation in West Africa.
-          </p>
         </motion.div>
 
         {/* RIGHT */}
@@ -74,20 +69,6 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
 
-          {/* REFINED METRIC CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="absolute -bottom-6 left-6 bg-white/95 backdrop-blur-md px-7 py-5 rounded-xl shadow-lg border border-gray-100"
-          >
-            <span className="text-3xl font-bold font-serif text-[#93457A]">
-              100%
-            </span>
-            <p className="text-[10px] font-semibold tracking-widest text-[#4A4A4A] uppercase">
-              Client Retention
-            </p>
-          </motion.div>
         </motion.div>
 
       </div>

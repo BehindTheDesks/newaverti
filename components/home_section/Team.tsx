@@ -41,12 +41,8 @@ export default function Team() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <h2 className="text-3xl sm:text-4xl font-normal tracking-tight font-serif text-[#1A1A1A]">
-            Averti Founding Partners
+            AVERTI FOUNDING PARTNERS
           </h2>
-          <p className="text-sm sm:text-base text-[#4A4A4A] leading-relaxed">
-            Our partners bring decades of institutional knowledge from the
-            world&apos;s leading financial and tech firms.
-          </p>
         </div>
 
         {/* Team Members Grid */}

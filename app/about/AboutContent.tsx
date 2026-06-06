@@ -39,20 +39,20 @@ const values = [
 ];
 
 const disciplines = [
-  "Audit & Quality Assurance",
+  "Auditing",
   "Accountancy Services",
-  "Tax Advisory Services",
-  "Financial Services",
+  "Taxation",
+  "Financial Management",
   "Training & Development",
-  "Consultancy & Advisory",
-  "Process Management",
-  "Human Capital Management",
+  "Consultancy Services",
+  "Reporting Accountants",
+  "Human Capital Development",
 ];
 
 const advantages = [
   {
     number: "01",
-    title: "120+ Years Combined Experience",
+    title: "100+ Years Combined Experience",
     desc: "Our team is composed of seasoned professionals with extensive experience across multiple sectors of the Nigerian economy.",
   },
   {
@@ -67,34 +67,28 @@ const advantages = [
   },
 ];
 
-const services = [
-  {
-    icon: Scale,
-    title: "Audit & Assurance",
-    desc: "Statutory audit, forensic audit, due diligence, internal control reviews and risk management support.",
-  },
-  {
-    icon: BriefcaseBusiness,
-    title: "Business Advisory",
-    desc: "Strategic planning, business development, restructuring, venture support and operational consulting.",
-  },
-  {
-    icon: LineChart,
-    title: "Financial Services",
-    desc: "Business valuation, mergers & acquisitions, capital structuring and financial performance optimization.",
-  },
-  {
-    icon: Users,
-    title: "Human Capital",
-    desc: "Recruitment, training, talent management, performance systems and workforce development strategies.",
-  },
-];
-
-const proofPoints = [
-  { value: "120+", label: "Years Combined Experience" },
-  { value: "08", label: "Core Advisory Areas" },
-  { value: "100%", label: "Client-Focused Approach" },
-];
+// const services = [
+//   {
+//     icon: Scale,
+//     title: "Audit & Assurance",
+//     desc: "Statutory audit, forensic audit, due diligence, internal control reviews and risk management support.",
+//   },
+//   {
+//     icon: BriefcaseBusiness,
+//     title: "Business Advisory",
+//     desc: "Strategic planning, business development, restructuring, venture support and operational consulting.",
+//   },
+//   {
+//     icon: LineChart,
+//     title: "Financial Services",
+//     desc: "Business valuation, mergers & acquisitions, capital structuring and financial performance optimization.",
+//   },
+//   {
+//     icon: Users,
+//     title: "Human Capital",
+//     desc: "Recruitment, training, talent management, performance systems and workforce development strategies.",
+//   },
+// ];
 
 const reveal = {
   hidden: { opacity: 0, y: 22 },
@@ -161,22 +155,10 @@ export default function AboutContent() {
 
             <p className="mt-7 max-w-xl text-base leading-8 text-[#4A4A4A] sm:text-lg">
               Averti Professional Managers is a multidisciplinary consulting and
-              advisory firm focused on audit, taxation, business engineering, report accountancy and financial management.
+              advisory firm focused on auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
             </p>
 
-            <div className="mt-12 grid grid-cols-1 gap-px border-y border-[#1A1A1A]/10 bg-[#1A1A1A]/10 sm:grid-cols-3 lg:max-w-xl">
-              {proofPoints.map((point) => (
-                <div key={point.label} className="bg-[#FAF8F5] py-5 sm:px-5">
-                  <span className="font-serif text-3xl font-normal text-[#93457A]">
-                    {point.value}
-                  </span>
-
-                  <p className="mt-2 text-[10px] font-semibold uppercase leading-5 tracking-[0.2em] text-[#4A4A4A]">
-                    {point.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+            
           </div>
 
           <div className="relative min-h-[420px] lg:col-span-7">
@@ -207,7 +189,7 @@ export default function AboutContent() {
               </span>
 
               <p className="mt-3 font-serif text-2xl leading-snug text-[#1A1A1A]">
-                We advance, We Execute and We Finish.
+                We Advance, We Execute and We Finish.
               </p>
             </div>
           </div>
@@ -220,7 +202,7 @@ export default function AboutContent() {
           <div className="lg:col-span-5">
             <SectionLabel>Who We Are</SectionLabel>
 
-            <h2 className="mt-5 max-w-xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
+            <h2 className="mt-5 uppercase max-w-xl font-serif text-3xl font-normal leading-tight sm:text-4xl">
               Helping businesses adapt, improve and grow in a changing world.
             </h2>
           </div>
@@ -229,9 +211,7 @@ export default function AboutContent() {
             <p className="text-sm sm:text-xl leading-7 text-[#4A4A4A] sm:text-base">
               The modern business environment continues to evolve through
               changing regulations, global competition, economic uncertainty
-              and operational complexity. Organizations today require more than
-              theoretical advice — they need experienced partners capable of
-              delivering practical and measurable outcomes.
+              and operational complexity.
             </p>
 
             <p className="text-sm sm:text-xl leading-7 text-[#4A4A4A] sm:text-base">
@@ -244,7 +224,7 @@ export default function AboutContent() {
 
           <div className="border-l border-[#93457A]/30 pl-6 lg:col-span-2 lg:self-end">
             <span className="font-serif text-5xl font-normal text-[#93457A]">
-              120+
+              100+
             </span>
 
             <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]">
@@ -257,7 +237,7 @@ export default function AboutContent() {
           {disciplines.map((discipline) => (
             <div
               key={discipline}
-              className="border-t border-[#1A1A1A]/15 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#1A1A1A]"
+              className="border-t lg:text-center border-[#1A1A1A]/15 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#1A1A1A]"
             >
               {discipline}
             </div>
@@ -266,7 +246,7 @@ export default function AboutContent() {
       </Reveal>
 
       {/* SERVICES */}
-      <Reveal className="bg-white/60 py-20 sm:py-24">
+      {/* <Reveal className="bg-white/60 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <SectionLabel>Core Services</SectionLabel>
@@ -301,26 +281,26 @@ export default function AboutContent() {
             })}
           </div>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       {/* ETHOS */}
       <Reveal className="bg-[#93457A] py-20 text-white sm:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
+        <div className="mx-auto  max-w-7xl  gap-12 px-6 lg:items-center">
+          <div className=" gap-4 flex flex-col items-center">
+            <span className="text-base font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
               The Averti Ethos
             </span>
 
-            <blockquote className="mt-6 max-w-4xl font-serif text-3xl font-normal italic leading-tight sm:text-4xl lg:text-5xl">
+            <blockquote className="mt-6 max-w-4xl font-serif text-3xl font-normal italic leading-tight sm:text-4xl lg:text-5xl text-center">
               “We offer not only transformation strategies, but the capability
               needed to execute them and deliver sustainable change.”
             </blockquote>
           </div>
 
-          <p className="max-w-md text-sm leading-7 text-[#FAF8F5]/75 lg:col-span-4">
+          {/* <p className="max-w-md text-sm leading-7 text-[#FAF8F5]/75 lg:col-span-4">
             Our mission is to create value for organizations through strategic
             insight, operational support and long-term professional partnership.
-          </p>
+          </p> */}
         </div>
       </Reveal>
 
@@ -414,7 +394,7 @@ export default function AboutContent() {
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
         <div className="grid grid-cols-1 items-center gap-10 rounded-2xl border border-[#1A1A1A]/10 bg-[#1A1A1A] p-8 text-white sm:p-10 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-8">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E67E22]">
+            <span className="text-base font-semibold uppercase tracking-[0.28em] text-[#E67E22]">
               Let’s Work Together
             </span>
 
@@ -423,16 +403,15 @@ export default function AboutContent() {
               Averti.
             </h2>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/70">
-              Speak with our team about your organization’s operational,
-              financial, governance, or workforce development goals.
+            <p className="mt-5 max-w-xl text-sm lg:text-lg leading-7 text-white/70">
+              Speak with our team about your organization’s auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
             </p>
           </div>
 
           <div className="lg:col-span-4 lg:flex lg:justify-end">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-all duration-300 hover:bg-transparent hover:text-white"
+              className="inline-flex items-center justify-center rounded-full border border-white bg-white px-6 py-3 text-base font-semibold uppercase tracking-[0.16em] text-[#93457A] transition-all duration-300 hover:bg-transparent hover:text-white"
             >
               Request Consultation
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />

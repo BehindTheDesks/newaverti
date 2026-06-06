@@ -4,16 +4,8 @@ import { motion } from "motion/react";
 
 const metrics = [
   {
-    value: "120",
+    value: "100+",
     label: "Years of Combined Experience",
-  },
-  {
-    value: "8",
-    label: "Core Advisory Service Areas",
-  },
-  {
-    value: "Multi-Sector",
-    label: "Industry Experience Across Nigeria",
   },
   {
     value: "End-to-End",
@@ -48,7 +40,7 @@ export default function SuccessMetrics() {
             </h2>
 
             <p className="text-sm sm:text-base leading-relaxed text-white/75 max-w-md">
-              We support organizations with practical advisory solutions across finance, governance, operations, compliance and human capital management.
+              We support organizations with practical advisory solutions across auditing, accountancy services, taxation, financial management,  reporting accountants, human capital development, training and consultancy services.
             </p>
           </motion.div>
 
