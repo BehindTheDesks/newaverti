@@ -47,10 +47,10 @@ export default function InnovationGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 bg-white rounded-2xl p-5 md:p-10 border border-[#1A1A1A]/5 shadow-sm flex flex-col justify-center space-y-6"
+            className="lg:col-span-5 bg-white rounded-2xl p- md:p-5 border border-[#1A1A1A]/5 shadow-sm flex flex-col justify-center space-y-6"
           >
-            <h2 className="text-3xl sm:text-4xl font-normal leading-tight font-serif text-[#1A1A1A]">
-              Structured expertise. Measurable execution.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight font-serif text-[#1A1A1A]">
+              Structured Expertise. Measurable Execution.
             </h2>
 
             <p className="text-base leading-relaxed text-[#4A4A4A]">

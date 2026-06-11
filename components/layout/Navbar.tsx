@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-brand-purple border-b border-[#93457A]/5 transition-all duration-300">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white border-b border-[#93457A]/5 transition-all duration-300 border-b-[#93457A]">
         <div className="max-w-7xl mx-auto px-6 h-32 flex items-center justify-between">
           {/* Logo */}
           <Link 
@@ -41,7 +41,7 @@ export default function Navbar() {
             className="flex items-center transition-opacity hover:opacity-90 duration-300"
           >
             <Image
-              src="/images/averti_logo_new.png"
+              src="/images/averti_logo.png"
               alt="Averti Consulting Logo"
               width={130}
               height={30}
@@ -61,8 +61,8 @@ export default function Navbar() {
                   href={link.href} 
                   className={`text-sm md:text-lg font-medium transition-all duration-200 relative py-1 ${
                     active 
-                      ? "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#FAF8F5] after:rounded-full" 
-                      : "text-[#FAF8F5]/80 hover:text-white"
+                      ? "text-[#93457A] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#FAF8F5] after:rounded-full" 
+                      : "text-[#93457A] hover:text-white"
                   }`}
                 >
                   {link.name}
@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center p-2 rounded-full text-[#FAF8F5] hover:bg-white/10 active:scale-95 transition-all duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-full text-[#93457A] hover:bg-white/10 active:scale-95 transition-all duration-200"
               aria-label="Open Menu"
             >
               <Menu className="w-8 h-8" />

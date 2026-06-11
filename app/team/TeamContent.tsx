@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Award, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
@@ -63,26 +63,49 @@ const leaders = [
     intro:
       "Cecilia is an accomplished accounting, finance and banking professional with over 25 years of experience spanning audit, treasury operations, banking administration, process management, consultancy and professional training.",
 
-    bio: `Cecilia Osoka is a highly experienced accounting, finance and banking professional with a career spanning over 25 years across audit, financial management, banking operations, treasury management, process improvement, consultancy and professional training.
+    bio: `Cecilia is an accomplished and seasoned professional with practical experiences covering
+accounting, audit, finance , banking and consultancy spanning over 35 years. She holds a
+BSC. (Hons) Accounting UNILAG, MBA (OAU) and is a Fellow of the Institute of Chartered
+Accountants of Nigeria, (FCA). She is a Senior Honorary Member of the Chartered Institute
+of Bankers Of Nigeria (CIBN) and an Associate of the Chartered Institute of Taxation of
+Nigeria (CITN) .
+Her Audit and Accountancy practice career of about 7years was spent at Uniugbe ,Akintola
+and Co before moving to the Finance sector where she worked as the pioneer Manager
+Accounts and Finance for Risk Fund PLC a Venture Capital Finance company.Her banking
+career which spanned almost 17years began at Merchant Bank of Commerce Ltd as a
+pioneer Treasury staff.
+In the United Bank For Africa Plc where she spent 10years, she worked in Head office
+Operations departments: Clearing, Treasury Operations, Remittances, Central Processing
+Centre as a Deputy Head and Head, Settlement Operations playing a key role in the set up
+of the Central Processing Centre ( CPC).In the Treasury Department she was Head LCY
+and liquidity management Units and participated in the ALCO meetings. In the Business
+Process Design Department she participated in Banking Applications implementations (
+SAP and Flexcube) Change Management and facilitation programs , Processes and
+Procedure Desk( SOP) manuals documentation. She resigned as a Principal Manager as
+the Head, Settlements Operations.
+In Ecobank Nigeria Plc where she worked for almost 3 years, her responsibilities covered
+the set up and supervision of the Head office Central Processing Centre (CPC) departments
+covering Clearing, Funds Transfer, Cheque Management, Card Operations, Trade
+Operations, Treasury Operations (TROPS) and Central Accounts Opening Centre. She also
+had oversight. supervision of about 250 branches, Cash Management Centres (CMC)
+operations with the Branch Operations Coordination Unit and also the General Internal
+Services (GIS) and Transaction Banking services. She supervised and participated in the
+Ecobank Group Operations projects, Flexcube Software implementation, Procedural
+Manuals documentation and training.
+On the job training courses attended over her banking career include Tom Associates Train
+the Trainer, Euro Money Money Market and Assets Management Training sessions, FDHL
 
-    She holds a B.Sc. (Hons) in Accounting from the University of Lagos and an MBA from Obafemi Awolowo University. She is a Fellow of the Institute of Chartered Accountants of Nigeria (FCA), a Senior Honorary Member of the Chartered Institute of Bankers of Nigeria (HCIBN) and an Associate of the Chartered Institute of Taxation of Nigeria (ACITN).
-
-    Cecilia began her professional career in audit and accountancy practice at Uniugbe, Akintola & Co before transitioning into the finance sector as the pioneer Manager, Accounts and Finance at Risk Fund Plc, a venture capital finance company.
-
-    Her banking career, which spanned almost 17 years, began at Merchant Bank of Commerce Limited as a pioneer Treasury staff member. She later joined United Bank for Africa (UBA) Plc, where she spent 10 years across several strategic operations and treasury functions including Clearing, Treasury Operations, Remittances, Central Processing Centre (CPC) and Settlement Operations. She played a key role in establishing the bank’s Central Processing Centre and later served as Head of LCY and Liquidity Management Units within the Treasury Department, participating actively in ALCO meetings.
-
-    Cecilia also worked within UBA’s Business Process Design Department, contributing to banking application implementations including SAP and Flexcube, change management initiatives, process documentation and operational procedure manual development. She exited UBA as a Principal Manager and Head of Settlement Operations.
-
-    At Ecobank Nigeria Plc, where she worked for nearly three years as an Assistant General Manager, Cecilia supervised large-scale banking operations including Clearing, Funds Transfer, Card Operations, Trade Operations, Treasury Operations, Cheque Management and Central Account Opening processes. She also oversaw branch operations coordination for over 250 branches and participated in group-wide operational projects, systems implementation, procedural documentation and operational training initiatives.
-
-    Throughout her banking career, Cecilia attended several professional development programmes including training sessions by Tom Associates, Euromoney, ING Summer School in Brussels and Holland, RTGS Training in The Gambia and other treasury and asset management programmes. She was also a member of the RTGS Implementation Group under the CBN Vision 2020 Project.
-
-    Since leaving the Ecobank Group in 2009, Cecilia has continued to provide accounting, consultancy and training services as an Independent Consultant.
-
-    As a founding Partner at Averti Professional Managers, her focus includes financial institutions training programmes, banking operations advisory and business process improvement projects.`,
+Bourse game, RTGS Training in the Gambia and, the ING Summer School in Brussels and
+Holland on Trade.
+She was a member of the RTGS Implementation Group in the CBN Vision 2020 Project
+implementation
+Since leaving the Ecobank group as an Assistant General Manager in 2009, Cecilia had
+been involved in Accounting, Consultancy and Training work as an Independent Consultant.
+As a founding Partner in Averti Professional Managers her focus is on Financial Institutions
+training programmes and Business Process Improvement projects.`,
 
     education:
-      "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | FCA | HCIBN | ACITN",
+      "B.Sc. Accounting, University of Lagos | MBA, Obafemi Awolowo University | ACA | FCA (ICAN)| HCIBN | ACITN ",
 
     
   },
@@ -110,6 +133,43 @@ export default function TeamContent() {
     duration: reduceMotion ? 0 : 0.7,
     ease: [0.22, 1, 0.36, 1] as const,
   };
+
+  useEffect(() => {
+    const syncToHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      const matchingLeader = leaders.find((leader) => {
+        const slug = leader.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
+
+        return slug === hash;
+      });
+
+      if (!matchingLeader) {
+        setOpenProfile(leaders[0]?.name ?? null);
+        return;
+      }
+
+      setOpenProfile(matchingLeader.name);
+
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(hash);
+        target?.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "start",
+        });
+      });
+    };
+
+    const timer = window.setTimeout(syncToHash, 0);
+    window.addEventListener("hashchange", syncToHash);
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("hashchange", syncToHash);
+    };
+  }, [reduceMotion]);
 
   return (
     <div className="w-full bg-[#FAF8F5] text-[#1A1A1A]">
@@ -152,6 +212,7 @@ export default function TeamContent() {
             return (
               <motion.article
                 key={leader.name}
+                id={leader.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
                 variants={reveal}
                 transition={transition}
                 className="border-b border-[#1A1A1A]/10 pb-10 lg:pb-14"

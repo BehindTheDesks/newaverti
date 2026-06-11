@@ -21,9 +21,9 @@ export default function Hero() {
               The Future of Enterprise
             </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight font-serif text-[#1A1A1A]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight font-serif text-[#1A1A1A]">
               Strategic Advisory for{" "}
-              <span className="italic font-light text-[#93457A]">
+              <span className=" font-semibold text-[#93457A]">
                 Business Growth
               </span>
             </h1>

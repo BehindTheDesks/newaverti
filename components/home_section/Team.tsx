@@ -1,17 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface TeamMemberProps {
   name: string;
   imageSrc: string;
+  href: string;
 }
 
-function TeamMember({ name, imageSrc }: TeamMemberProps) {
+function TeamMember({ name, imageSrc, href }: TeamMemberProps) {
   return (
     <div className="group space-y-4">
       {/* Portrait Image Container */}
-      <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md border border-gray-100 bg-[#FAF8F5]">
+      <Link
+        href={href}
+        className="relative block aspect-[3/4] overflow-hidden rounded-xl border border-gray-100 bg-[#FAF8F5] shadow-md"
+        aria-label={`View ${name}'s profile`}
+      >
         <Image
           src={imageSrc}
           alt={`Professional studio headshot of ${name}`}
@@ -19,9 +25,7 @@ function TeamMember({ name, imageSrc }: TeamMemberProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        {/* Soft elegant gradient overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" /> */}
-      </div>
+      </Link>
 
       {/* Name and Designation */}
       <div className="space-y-1 pl-1 flex flex-col items-center">
@@ -40,8 +44,8 @@ export default function Team() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-normal tracking-tight font-serif text-[#1A1A1A]">
-            AVERTI FOUNDING PARTNERS
+          <h2 className="text-3xl sm:text-4xl font-medium tracking-wide font-serif text-[#1A1A1A]">
+            AVERTI {" "} FOUNDING {" "} PARTNERS
           </h2>
         </div>
 
@@ -50,14 +54,17 @@ export default function Team() {
           <TeamMember
             name="Inyang Sami-Orungbe"
             imageSrc="/images/inyang_sami_orungbe.jpeg"
+            href="/team#inyang-sami-orungbe"
           />
           <TeamMember
             name="Bukki Orekoya"
             imageSrc="/images/bukki_orekoya.jpeg"
+            href="/team#bukki-orekoya"
           />
           <TeamMember
             name="Cecilia Osoka"
             imageSrc="/images/cecilia_osoka.jpeg"
+            href="/team#cecilia-osoka"
           />
         </div>
 

@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { CheckCircle2, Clock3, Mail, MapPin, Send, ShieldCheck, LucideIcon} from "lucide-react";
+import { CheckCircle2, Clock3, Mail, MapPin, Send, ShieldCheck, LucideIcon, Phone } from "lucide-react";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 
 type FormData = {
@@ -46,11 +47,31 @@ const contactDetails: ContactDetail[] = [
     href: "mailto:info@averti.com.ng",
   },
   {
+    icon: Phone,
+    eyebrow: "Phone Number",
+    title: "08074620351",
+    detail: "",
+    href: "tel:+2348074620351",
+  },
+  {
     icon: Clock3,
     eyebrow: "Working Hours",
     title: "Monday — Friday · 09:00 — 17:00 WAT",
     detail: "",
-    href: "tel:+23417943620",
+    href: "",
+  },
+];
+
+const socialLinks = [
+  {
+    icon: FaLinkedinIn,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/averti-professional-mangers/",
+  },
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/avertipm?igsh=ZzRxZWk4YmJjdTRI/",
   },
 ];
 
@@ -288,6 +309,39 @@ export default function ContactPage() {
               );
             })}
           </div>
+          <motion.div
+            variants={reveal}
+            transition={transition}
+            className="mt-6 border border-[#1A1A1A]/10 bg-white p-6"
+          >
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#93457A]">
+              Connect
+            </h3>
+            <div className="mt-4 space-y-3">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center justify-between gap-4 border-b border-[#1A1A1A]/8 pb-3 transition-colors duration-300 last:border-b-0 last:pb-0 hover:text-[#93457A]"
+                  >
+                    <span className="inline-flex items-center gap-3 text-sm font-medium text-[#1A1A1A] transition-colors duration-300 group-hover:text-[#93457A]">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                      {link.label}
+                    </span>
+                    <span className="text-xs uppercase tracking-[0.18em] text-[#4A4A4A]">
+                      View
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </motion.div>
+
           <motion.div
             variants={reveal}
             transition={transition}
