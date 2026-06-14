@@ -285,22 +285,34 @@ export default function AboutContent() {
 
       {/* ETHOS */}
       <Reveal className="bg-[#93457A] py-20 text-white sm:py-24">
-        <div className="mx-auto  max-w-7xl  gap-12 px-6 lg:items-center">
-          <div className=" gap-4 flex flex-col items-center">
-            <span className="text-base font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-[0.28em] text-[#FAF8F5]/70">
               The Averti Ethos
             </span>
-
-            <blockquote className="mt-6 max-w-4xl font-serif text-3xl font-normal italic leading-tight sm:text-4xl lg:text-5xl text-center">
-              “We offer not only transformation strategies, but the capability
-              needed to execute them and deliver sustainable change.”
-            </blockquote>
           </div>
 
-          {/* <p className="max-w-md text-sm leading-7 text-[#FAF8F5]/75 lg:col-span-4">
-            Our mission is to create value for organizations through strategic
-            insight, operational support and long-term professional partnership.
-          </p> */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="rounded-2xl border border-white/10 bg-white/6 p-8 sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#FAF8F5]/70">
+                Vision Statement
+              </p>
+
+              <blockquote className="mt-5 font-serif text-2xl font-normal leading-[1.45] italic text-[#FAF8F5] sm:text-3xl">
+                &ldquo;To be the most trusted partner for organizations seeking lasting transformation, where integrity drives every decision, expertise shapes every strategy, and impact endures beyond every engagement.&rdquo;
+              </blockquote>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/6 p-8 sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#FAF8F5]/70">
+                Mission Statement
+              </p>
+
+              <blockquote className="mt-5 font-serif text-2xl font-normal leading-[1.45] italic text-[#FAF8F5] sm:text-3xl">
+                &ldquo;We partner with organizations to cut through complexity, strengthen governance, and drive measurable transformation; with the confidence of seasoned experts and the clarity of strategic innovators.&rdquo;
+              </blockquote>
+            </div>
+          </div>
         </div>
       </Reveal>
 

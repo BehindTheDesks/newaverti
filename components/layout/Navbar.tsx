@@ -62,7 +62,7 @@ export default function Navbar() {
                   className={`text-sm md:text-lg font-medium transition-all duration-200 relative py-1 ${
                     active 
                       ? "text-[#93457A] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#FAF8F5] after:rounded-full" 
-                      : "text-[#93457A] hover:text-white"
+                      : "text-[#93457A] "
                   }`}
                 >
                   {link.name}
@@ -145,7 +145,7 @@ export default function Navbar() {
                 className={`text-xl font-medium font-serif flex items-center justify-between group transition-all duration-200 ${
                   active 
                     ? "text-white translate-x-2" 
-                    : "text-[#FAF8F5]/80 hover:text-white hover:translate-x-2"
+                    : "text-[#FAF8F5]/80  hover:translate-x-2"
                 }`}
               >
                 <span>{link.name}</span>
