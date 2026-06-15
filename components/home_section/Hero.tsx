@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-white/20 group">
             <Image
-              src="/images/averti_team.jpeg"
+              src="/images/averti_homepage.jpeg"
               alt="Averti Professional Managers"
               fill
               priority

@@ -231,7 +231,7 @@ export default function ServicesContent() {
           <div className="relative lg:col-span-7">
             <div className="relative ml-auto aspect-[4/3] w-full overflow-hidden rounded-lg border border-white/60 bg-[#1A1A1A] shadow-2xl lg:max-w-[660px]">
               <Image
-                src="/images/hero-conference.png"
+                src="/images/averti_homepage.jpeg"
                 alt="Professional advisory meeting at Averti"
                 fill
                 priority

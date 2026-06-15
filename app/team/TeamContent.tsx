@@ -61,7 +61,7 @@ const leaders = [
     imageSrc: "/images/cecilia_osoka.jpeg",
 
     intro:
-      "Cecilia is an accomplished accounting, finance and banking professional with over 25 years of experience spanning audit, treasury operations, banking administration, process management, consultancy and professional training.",
+      "Cecilia is an accomplished accounting, finance and banking professional with over 35 years of experience spanning audit, treasury operations, banking administration, process management, consultancy and professional training.",
 
     bio: `Cecilia is an accomplished and seasoned professional with practical experiences covering
 accounting, audit, finance , banking and consultancy spanning over 35 years. She holds a

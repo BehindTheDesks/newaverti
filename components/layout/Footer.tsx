@@ -51,7 +51,7 @@ export default function Footer() {
                     href="/team" 
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Teams
+                    Core Team
                   </Link>
                 </li>
                 <li>
@@ -81,7 +81,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link 
-                    href="https://www.linkedin.com/company/averti-professional-mangers/" 
+                    href="https://www.linkedin.com/company/averti-professional-managers/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
@@ -97,6 +97,16 @@ export default function Footer() {
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
                     Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="https://www.facebook.com/share/1Cwu1P3zay/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
+                  >
+                    Facebook
                   </Link>
                 </li>
               </ul>
