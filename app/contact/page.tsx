@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CheckCircle2, Clock3, Mail, MapPin, Send, ShieldCheck, LucideIcon, Phone } from "lucide-react";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa6";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 
 type FormData = {
@@ -73,6 +73,12 @@ const socialLinks = [
     label: "Instagram",
     href: "https://www.instagram.com/avertipm?igsh=ZzRxZWk4YmJjdTRI/",
   },
+  {
+    icon: FaFacebook,
+    label: "Facebook",
+    href: "https://www.facebook.com/avertipm?mibextid=wwXIfr",
+  },
+  
 ];
 
 const interestOptions = [
