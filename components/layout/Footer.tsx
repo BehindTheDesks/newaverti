@@ -43,7 +43,7 @@ export default function Footer() {
                     href="/services" 
                     className="text-sm text-[#93457A] hover:text-[#93457A] transition-colors duration-200"
                   >
-                    Service
+                    Services
                   </Link>
                 </li>
                 <li>

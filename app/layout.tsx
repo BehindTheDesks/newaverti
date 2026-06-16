@@ -19,8 +19,59 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Averti Consulting | Future-Proofing Through Strategic Precision",
-  description: "Averti provides high-stakes consulting that bridges traditional authority with modern efficiency. We design resilient architectures for tomorrow's market leaders.",
+  metadataBase: new URL("https://averti.com.ng"),
+  title: {
+    default: "Averti Professional Managers | Premium Advisory & Consulting",
+    template: "%s | Averti Professional Managers",
+  },
+  description:
+    "Averti Professional Managers provides high-stakes consulting, strategic management, and resilient technological architectures to steer global enterprises toward long-term growth.",
+  keywords: [
+    "executive consulting",
+    "management consulting",
+    "business advisory",
+    "corporate strategy",
+    "operational excellence",
+    "risk management",
+    "financial advisory",
+    "Averti Professional Managers",
+    "Lagos Nigeria",
+  ],
+  openGraph: {
+    title: "Averti Professional Managers | Premium Advisory & Consulting",
+    description:
+      "Averti provides high-stakes consulting that bridges traditional authority with modern efficiency. We design resilient architectures for tomorrow's market leaders.",
+    url: "https://averti.com.ng",
+    siteName: "Averti Professional Managers",
+    locale: "en_NG",
+    type: "website",
+    images: [
+      {
+        url: "/images/averti_homepage.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Averti Professional Managers - Strategic Advisory",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Averti Professional Managers | Premium Advisory & Consulting",
+    description:
+      "Averti provides high-stakes consulting that bridges traditional authority with modern efficiency. We design resilient architectures for tomorrow's market leaders.",
+    images: ["/images/averti_homepage.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
