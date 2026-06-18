@@ -170,6 +170,7 @@ export default function ContactContent() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -197,14 +198,42 @@ export default function ContactContent() {
       }));
     };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    window.setTimeout(() => {
+    try {
+      const response = await fetch("/api/resend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as
+        | { ok: true; id: string | null }
+        | { error?: string };
+
+      if (!response.ok) {
+        const errorMessage =
+          "error" in result && result.error
+            ? result.error
+            : "Something went wrong.";
+        throw new Error(errorMessage);
+      }
+
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1200);
+    } catch (error) {
+      setIsSubmitting(false);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "We could not send your inquiry right now."
+      );
+    }
   };
 
   const transition: Transition = {
@@ -443,9 +472,10 @@ export default function ContactContent() {
                       </>
                     )}
                   </button>
-                  
-                  
                 </div>
+                {submitError ? (
+                  <p className="text-sm leading-6 text-red-700">{submitError}</p>
+                ) : null}
               </form>
             ) : (
               <motion.div
